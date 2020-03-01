@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		0D64334E240C300F008F0CB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64334D240C300F008F0CB4 /* AppDelegate.swift */; };
 		0D643350240C300F008F0CB4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64334F240C300F008F0CB4 /* SceneDelegate.swift */; };
-		0D643352240C300F008F0CB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D643351240C300F008F0CB4 /* ViewController.swift */; };
 		0D643355240C300F008F0CB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D643353240C300F008F0CB4 /* Main.storyboard */; };
 		0D643358240C300F008F0CB4 /* Reciplease.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0D643356240C300F008F0CB4 /* Reciplease.xcdatamodeld */; };
 		0D64335A240C3018008F0CB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D643359240C3018008F0CB4 /* Assets.xcassets */; };
 		0D64335D240C3018008F0CB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D64335B240C3018008F0CB4 /* LaunchScreen.storyboard */; };
 		0D643368240C3019008F0CB4 /* RecipleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D643367240C3019008F0CB4 /* RecipleaseTests.swift */; };
+		0D643377240C3B3A008F0CB4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D643376240C3B3A008F0CB4 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +31,6 @@
 		0D64334A240C300F008F0CB4 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D64334D240C300F008F0CB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D64334F240C300F008F0CB4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0D643351240C300F008F0CB4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0D643354240C300F008F0CB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D643357240C300F008F0CB4 /* Reciplease.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reciplease.xcdatamodel; sourceTree = "<group>"; };
 		0D643359240C3018008F0CB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,6 +39,7 @@
 		0D643363240C3019008F0CB4 /* RecipleaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D643367240C3019008F0CB4 /* RecipleaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseTests.swift; sourceTree = "<group>"; };
 		0D643369240C3019008F0CB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D643376240C3B3A008F0CB4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,12 +81,10 @@
 		0D64334C240C300F008F0CB4 /* Reciplease */ = {
 			isa = PBXGroup;
 			children = (
-				0D64334D240C300F008F0CB4 /* AppDelegate.swift */,
-				0D64334F240C300F008F0CB4 /* SceneDelegate.swift */,
-				0D643351240C300F008F0CB4 /* ViewController.swift */,
-				0D643353240C300F008F0CB4 /* Main.storyboard */,
-				0D643359240C3018008F0CB4 /* Assets.xcassets */,
-				0D64335B240C3018008F0CB4 /* LaunchScreen.storyboard */,
+				0D643375240C308A008F0CB4 /* Model */,
+				0D643374240C3074008F0CB4 /* View */,
+				0D643373240C305F008F0CB4 /* Controller */,
+				0D643372240C3031008F0CB4 /* Supporting Files */,
 				0D64335E240C3018008F0CB4 /* Info.plist */,
 				0D643356240C300F008F0CB4 /* Reciplease.xcdatamodeld */,
 			);
@@ -100,6 +98,40 @@
 				0D643369240C3019008F0CB4 /* Info.plist */,
 			);
 			path = RecipleaseTests;
+			sourceTree = "<group>";
+		};
+		0D643372240C3031008F0CB4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D64334D240C300F008F0CB4 /* AppDelegate.swift */,
+				0D64334F240C300F008F0CB4 /* SceneDelegate.swift */,
+				0D643359240C3018008F0CB4 /* Assets.xcassets */,
+				0D64335B240C3018008F0CB4 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0D643373240C305F008F0CB4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0D643376240C3B3A008F0CB4 /* SearchViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0D643374240C3074008F0CB4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0D643353240C300F008F0CB4 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0D643375240C308A008F0CB4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,8 +236,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D643358240C300F008F0CB4 /* Reciplease.xcdatamodeld in Sources */,
-				0D643352240C300F008F0CB4 /* ViewController.swift in Sources */,
 				0D64334E240C300F008F0CB4 /* AppDelegate.swift in Sources */,
+				0D643377240C3B3A008F0CB4 /* SearchViewController.swift in Sources */,
 				0D643350240C300F008F0CB4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,7 +407,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Elie.Reciplease;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -392,7 +424,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Elie.Reciplease;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
