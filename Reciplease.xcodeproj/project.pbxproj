@@ -15,6 +15,8 @@
 		0D64335D240C3018008F0CB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D64335B240C3018008F0CB4 /* LaunchScreen.storyboard */; };
 		0D643368240C3019008F0CB4 /* RecipleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D643367240C3019008F0CB4 /* RecipleaseTests.swift */; };
 		0D643377240C3B3A008F0CB4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D643376240C3B3A008F0CB4 /* SearchViewController.swift */; };
+		0D6433D9240DAA87008F0CB4 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6433D8240DAA87008F0CB4 /* FavoriteViewController.swift */; };
+		0D6433DB240DAAA7008F0CB4 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6433DA240DAAA7008F0CB4 /* SearchTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		0D643367240C3019008F0CB4 /* RecipleaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseTests.swift; sourceTree = "<group>"; };
 		0D643369240C3019008F0CB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D643376240C3B3A008F0CB4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		0D6433D8240DAA87008F0CB4 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		0D6433DA240DAAA7008F0CB4 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				0D643376240C3B3A008F0CB4 /* SearchViewController.swift */,
+				0D6433D8240DAA87008F0CB4 /* FavoriteViewController.swift */,
+				0D6433DA240DAAA7008F0CB4 /* SearchTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -236,9 +242,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D643358240C300F008F0CB4 /* Reciplease.xcdatamodeld in Sources */,
+				0D6433DB240DAAA7008F0CB4 /* SearchTableViewController.swift in Sources */,
 				0D64334E240C300F008F0CB4 /* AppDelegate.swift in Sources */,
 				0D643377240C3B3A008F0CB4 /* SearchViewController.swift in Sources */,
 				0D643350240C300F008F0CB4 /* SceneDelegate.swift in Sources */,
+				0D6433D9240DAA87008F0CB4 /* FavoriteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
