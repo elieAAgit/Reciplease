@@ -9,22 +9,64 @@
 import UIKit
 
 class SearchViewController: UIViewController {
+// MARK: - Outlets and properties
+    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var contentView: UITextView!
+
+    /// Passing Datas between controllers
+    var passData: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        searchTextField.delegate = self
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
+// MARK: - Actions buttons
+extension SearchViewController {
+    /// Add aliment to the aliments user selection
+    @IBAction func addButtonDidTapped(_ sender: UIButton) {
+        guard let newAliment = searchTextField.text, var aliments = contentView.text else { return }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        // Add new aliment
+        aliments += "- " + newAliment + "\n"
+        contentView.text = aliments
+
+        // Clear textField for the next aliment
+        searchTextField.text = nil
+
+        // Add aliment in data array to pass with the segue
+        passData.append(newAliment)
     }
-    */
 
+    /// Clear the selection of aliments and suppress all entries in passData array
+    @IBAction func clearButtonDidTapped(_ sender: UIButton) {
+        contentView.text = nil
+        passData = []
+    }
+
+    /// Segue to SearchTableViewController. Passing data
+    @IBAction func searchButtonDidTapped(_ sender: UIButton) {
+    }
+}
+
+// MARK: - Dissmiss Keyboard
+extension SearchViewController: UITextFieldDelegate {
+    /// Dissmiss keyboard when user touch screen
+    @IBAction func dissmissKeyboard() {
+        hideKeyboard()
+    }
+
+    /// Dissmiss keyboard when 'return' button is pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        hideKeyboard()
+
+        return true
+    }
+
+    /// Dissmiss keyboard
+    private func hideKeyboard() {
+        searchTextField.resignFirstResponder()
+    }
 }
