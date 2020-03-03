@@ -13,8 +13,11 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var contentView: UITextView!
 
+    /// List of aliments for network call
+    var aliments: [String] = []
+
     /// Passing Datas between controllers
-    var passData: [String] = []
+    var passData: Recipes?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,28 +30,44 @@ class SearchViewController: UIViewController {
 extension SearchViewController {
     /// Add aliment to the aliments user selection
     @IBAction func addButtonDidTapped(_ sender: UIButton) {
-        guard let newAliment = searchTextField.text, var aliments = contentView.text else { return }
+        guard let newAliment = searchTextField.text, var aliment = contentView.text else { return }
 
         // Add new aliment
-        aliments += "- " + newAliment + "\n"
-        contentView.text = aliments
+        aliment += "- " + newAliment + "\n"
+        contentView.text = aliment
 
         // Clear textField for the next aliment
         searchTextField.text = nil
 
-        // Add aliment in data array to pass with the segue
-        passData.append(newAliment)
+        // Add aliment in aliments array to pass with the segue
+        aliments.append(newAliment)
     }
 
     /// Clear the selection of aliments and suppress all entries in passData array
     @IBAction func clearButtonDidTapped(_ sender: UIButton) {
         contentView.text = nil
-        passData = []
+        aliments = []
     }
 
     /// Segue to SearchTableViewController. Passing data
     @IBAction func searchButtonDidTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: SegueIdentifiers.searchToSearchTableView.rawValue, sender: self)
+        /// Prepare aliments for Url parameters
+        var addAliments: String {
+            return aliments.joined(separator: ",")
+        }
+
+        // Add parameters to Url
+        ApiUrl.edamanParameters = addAliments
+
+        // Network call
+        ApiService.getRecipe(url: ApiUrl.edamanUrl) { (response) in
+            guard let response = response else { return }
+
+            // Data for SearchTableViewController
+            self.passData = response
+
+            self.performSegue(withIdentifier: SegueIdentifiers.searchToSearchTableView.rawValue, sender: self)
+        }
     }
 }
 
@@ -56,6 +75,8 @@ extension SearchViewController {
 extension SearchViewController {
     /// Prepare Data for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let passData = passData else { return }
+
         if segue.identifier == SegueIdentifiers.searchToSearchTableView.rawValue {
             let searchTableViewController = segue.destination as! SearchTableViewController
             searchTableViewController.passData = passData
