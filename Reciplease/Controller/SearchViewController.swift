@@ -48,6 +48,18 @@ extension SearchViewController {
 
     /// Segue to SearchTableViewController. Passing data
     @IBAction func searchButtonDidTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: SegueIdentifiers.searchToSearchTableView.rawValue, sender: self)
+    }
+}
+
+// MARK: - Prepare segue
+extension SearchViewController {
+    /// Prepare Data for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SegueIdentifiers.searchToSearchTableView.rawValue {
+            let searchTableViewController = segue.destination as! SearchTableViewController
+            searchTableViewController.passData = passData
+        }
     }
 }
 

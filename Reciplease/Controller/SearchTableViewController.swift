@@ -10,9 +10,12 @@ import UIKit
 
 class SearchTableViewController: UIViewController {
 
+    /// Passing Datas between controllers
+    var passData: [String] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+print(passData)
         // Do any additional setup after loading the view.
     }
     

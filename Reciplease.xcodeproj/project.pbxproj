@@ -17,6 +17,7 @@
 		0D643377240C3B3A008F0CB4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D643376240C3B3A008F0CB4 /* SearchViewController.swift */; };
 		0D6433D9240DAA87008F0CB4 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6433D8240DAA87008F0CB4 /* FavoriteViewController.swift */; };
 		0D6433DB240DAAA7008F0CB4 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6433DA240DAAA7008F0CB4 /* SearchTableViewController.swift */; };
+		0D658705240E7D4D00D111A1 /* SegueIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D658704240E7D4D00D111A1 /* SegueIdentifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		0D643376240C3B3A008F0CB4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0D6433D8240DAA87008F0CB4 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		0D6433DA240DAAA7008F0CB4 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		0D658704240E7D4D00D111A1 /* SegueIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueIdentifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				0D643376240C3B3A008F0CB4 /* SearchViewController.swift */,
-				0D6433D8240DAA87008F0CB4 /* FavoriteViewController.swift */,
 				0D6433DA240DAAA7008F0CB4 /* SearchTableViewController.swift */,
+				0D6433D8240DAA87008F0CB4 /* FavoriteViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -136,6 +138,7 @@
 		0D643375240C308A008F0CB4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0D658704240E7D4D00D111A1 /* SegueIdentifiers.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				0D6433DB240DAAA7008F0CB4 /* SearchTableViewController.swift in Sources */,
 				0D64334E240C300F008F0CB4 /* AppDelegate.swift in Sources */,
 				0D643377240C3B3A008F0CB4 /* SearchViewController.swift in Sources */,
+				0D658705240E7D4D00D111A1 /* SegueIdentifiers.swift in Sources */,
 				0D643350240C300F008F0CB4 /* SceneDelegate.swift in Sources */,
 				0D6433D9240DAA87008F0CB4 /* FavoriteViewController.swift in Sources */,
 			);
