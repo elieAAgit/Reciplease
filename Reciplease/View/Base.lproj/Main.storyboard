@@ -122,6 +122,9 @@
                                 <state key="normal" title="Get directions">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="getDirectionsDidTapped:" destination="ebn-1B-Kce" eventType="touchUpInside" id="axy-7u-evk"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="r3b-ly-aTf">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="501"/>
@@ -254,7 +257,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kn7-4Q-vAZ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Reciplease" id="6O6-R2-uOg"/>
+                    <navigationItem key="navigationItem" title="Reciplease" id="6O6-R2-uOg">
+                        <barButtonItem key="rightBarButtonItem" image="star.fill" catalog="system" id="POc-JG-HND">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="favoriteButtonDidTapped:" destination="ebn-1B-Kce" id="nJ8-fB-Bdt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="detailView" destination="ppw-UF-0pK" id="3wP-Ii-Whp"/>
                         <outlet property="durationLabel" destination="h4u-ut-lKe" id="Xfb-xi-vee"/>
@@ -262,6 +272,7 @@
                         <outlet property="numberPartsLabel" destination="f9h-dY-xIf" id="Qcv-zf-NFS"/>
                         <outlet property="recipeImage" destination="yJD-Gn-ctw" id="9ms-e5-lu1"/>
                         <outlet property="recipeLabel" destination="eFd-0y-qsh" id="BbO-Nz-8J6"/>
+                        <outlet property="starNavigation" destination="POc-JG-HND" id="ZKA-uc-tq0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QSG-jP-EAk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
