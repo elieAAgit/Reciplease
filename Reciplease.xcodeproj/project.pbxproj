@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D35E79C24104B66002926DD /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D35E79B24104B66002926DD /* RecipeViewController.swift */; };
 		0D63E338240FC5D000848299 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63E337240FC5D000848299 /* UIImageView.swift */; };
 		0D64334E240C300F008F0CB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64334D240C300F008F0CB4 /* AppDelegate.swift */; };
 		0D643350240C300F008F0CB4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64334F240C300F008F0CB4 /* SceneDelegate.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D35E79B24104B66002926DD /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		0D63E337240FC5D000848299 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		0D64334A240C300F008F0CB4 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D64334D240C300F008F0CB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			children = (
 				0D643376240C3B3A008F0CB4 /* SearchViewController.swift */,
 				0D6433DA240DAAA7008F0CB4 /* SearchTableViewController.swift */,
+				0D35E79B24104B66002926DD /* RecipeViewController.swift */,
 				0D6433D8240DAA87008F0CB4 /* FavoriteViewController.swift */,
 			);
 			path = Controller;
@@ -364,6 +367,7 @@
 			files = (
 				0D643358240C300F008F0CB4 /* Reciplease.xcdatamodeld in Sources */,
 				0D6433DB240DAAA7008F0CB4 /* SearchTableViewController.swift in Sources */,
+				0D35E79C24104B66002926DD /* RecipeViewController.swift in Sources */,
 				0D64334E240C300F008F0CB4 /* AppDelegate.swift in Sources */,
 				0D643377240C3B3A008F0CB4 /* SearchViewController.swift in Sources */,
 				0D65870E240E981600D111A1 /* ApiKeys.swift in Sources */,

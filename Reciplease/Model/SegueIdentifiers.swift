@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// To list the names of the segues
 enum SegueIdentifiers: String {
     case searchToSearchTableView = "searchToSearchTableView"
+    case searchTableViewToRecipe = "searchTableViewToRecipe"
 }

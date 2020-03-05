@@ -12,8 +12,9 @@ class SearchTableViewController: UIViewController {
 // MARK: - Outlet and property
     @IBOutlet weak var tableView: UITableView!
     
-    /// Passing Datas between controllers
+    // Passing Datas between controllers
     var passData: Recipes?
+    var recipeDetail: Hits?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,4 +66,23 @@ extension SearchTableViewController: UITableViewDataSource {
 }
 
 // MARK: - Use UITableViewDelegate to access recipe detail
-extension SearchTableViewController: UITableViewDelegate {}
+extension SearchTableViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Recipe for RecipeViewController
+        recipeDetail = passData?.hits[indexPath.row]
+
+        performSegue(withIdentifier: SegueIdentifiers.searchTableViewToRecipe.rawValue, sender: self)
+    }
+}
+
+// MARK: - Prepare segue
+extension SearchTableViewController {
+    /// Prepare Data for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SegueIdentifiers.searchTableViewToRecipe.rawValue {
+            let recipeViewController = segue.destination as! RecipeViewController
+            // Pass data between controllers
+            recipeViewController.recipe = recipeDetail
+        }
+    }
+}
