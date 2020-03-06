@@ -10,16 +10,21 @@ import Foundation
 import Alamofire
 
 struct ApiService {
-    typealias completion = (Recipes?) -> Void
+    // Singleton pattern
+    static var shared = ApiService()
+    private init() {}
+
+    typealias completion = (Bool, Recipes?) -> Void
 
     /// Alamofire request
-    static func getRecipe(url: String, completion: @escaping completion) {
+    func getRecipe(url: String, completion: @escaping completion) {
         AF.request(url).validate().responseData { (response) in
             switch response.result {
                 case .success(let value):
                     let recipes = try? JSONDecoder().decode(Recipes.self, from: value)
-                    completion(recipes)
+                    completion(true, recipes)
                 case .failure(let error):
+                    completion(false, nil)
                     print(error)
             }
         }
