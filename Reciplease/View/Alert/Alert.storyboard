@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Alert View Controller-->
+        <scene sceneID="6Pk-82-9Nb">
+            <objects>
+                <viewController storyboardIdentifier="alertVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="03F-Ap-LUh" customClass="AlertViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Oqu-MN-h2C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="owv-al-zRf" userLabel="Alert View">
+                                <rect key="frame" x="50" y="260.5" width="275" height="146.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdW-1z-nrz">
+                                        <rect key="frame" x="16" y="72" width="243" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ius-pZ-po2" userLabel="Title View">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="56"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdK-83-7FO">
+                                                <rect key="frame" x="8" y="16" width="259" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.20640501380000001" green="0.20040675999999999" blue="0.20027127859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="hdK-83-7FO" secondAttribute="bottom" constant="16" id="4N5-mC-91S"/>
+                                            <constraint firstItem="hdK-83-7FO" firstAttribute="top" secondItem="Ius-pZ-po2" secondAttribute="top" constant="16" id="86B-Zh-rmf"/>
+                                            <constraint firstItem="hdK-83-7FO" firstAttribute="leading" secondItem="Ius-pZ-po2" secondAttribute="leading" constant="8" id="bV5-Hm-Xrh"/>
+                                            <constraint firstAttribute="trailing" secondItem="hdK-83-7FO" secondAttribute="trailing" constant="8" id="g1v-fi-EDX"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="nap-gb-fCl" userLabel="Buttons Stack View">
+                                        <rect key="frame" x="8" y="108.5" width="259" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgi-X5-ZNb">
+                                                <rect key="frame" x="0.0" y="0.0" width="121.5" height="30"/>
+                                                <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Cancel">
+                                                    <color key="titleColor" red="0.20640501380000001" green="0.20040675999999999" blue="0.20027127859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="cancelButtonDidTapped:" destination="03F-Ap-LUh" eventType="touchUpInside" id="cgA-Ez-nXB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTa-fx-mdG">
+                                                <rect key="frame" x="137.5" y="0.0" width="121.5" height="30"/>
+                                                <color key="backgroundColor" red="0.20640501380000001" green="0.20040675999999999" blue="0.20027127859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Action">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="actionButtonDidTapped:" destination="03F-Ap-LUh" eventType="touchUpInside" id="ECi-sS-ugd"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="nap-gb-fCl" secondAttribute="trailing" id="B5E-WD-D9a"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="WdW-1z-nrz" secondAttribute="trailing" constant="8" id="B5V-yb-AtG"/>
+                                    <constraint firstItem="Ius-pZ-po2" firstAttribute="leading" secondItem="owv-al-zRf" secondAttribute="leading" id="F5H-DE-DwM"/>
+                                    <constraint firstItem="nap-gb-fCl" firstAttribute="top" secondItem="WdW-1z-nrz" secondAttribute="bottom" constant="16" id="MMf-yN-rS8"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ius-pZ-po2" secondAttribute="trailing" id="UBk-R8-KCT"/>
+                                    <constraint firstItem="nap-gb-fCl" firstAttribute="leading" secondItem="owv-al-zRf" secondAttribute="leadingMargin" id="VeT-Zb-xIs"/>
+                                    <constraint firstItem="WdW-1z-nrz" firstAttribute="top" secondItem="Ius-pZ-po2" secondAttribute="bottom" constant="16" id="Vyt-vv-eQg"/>
+                                    <constraint firstAttribute="width" constant="275" id="YgL-iv-8Jz"/>
+                                    <constraint firstItem="Ius-pZ-po2" firstAttribute="top" secondItem="owv-al-zRf" secondAttribute="top" id="gEf-9t-dsx"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="nap-gb-fCl" secondAttribute="bottom" id="u4c-M4-ZDK"/>
+                                    <constraint firstItem="WdW-1z-nrz" firstAttribute="leading" secondItem="owv-al-zRf" secondAttribute="leadingMargin" constant="8" id="ufs-6r-z09"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="owv-al-zRf" firstAttribute="centerY" secondItem="Oqu-MN-h2C" secondAttribute="centerY" id="XfQ-Jq-7o9"/>
+                            <constraint firstItem="owv-al-zRf" firstAttribute="centerX" secondItem="Oqu-MN-h2C" secondAttribute="centerX" id="a9z-x4-hAM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QR5-D7-92V"/>
+                    </view>
+                    <connections>
+                        <outlet property="actionLabel" destination="MTa-fx-mdG" id="40q-Cv-QKA"/>
+                        <outlet property="alertView" destination="owv-al-zRf" id="VzP-FC-sHe"/>
+                        <outlet property="cancelLabel" destination="qgi-X5-ZNb" id="20v-DM-vcT"/>
+                        <outlet property="messageLabel" destination="WdW-1z-nrz" id="Ray-Ap-QTS"/>
+                        <outlet property="titleLabel" destination="hdK-83-7FO" id="3vg-ht-pVk"/>
+                        <outlet property="titleView" destination="Ius-pZ-po2" id="90S-Va-b3C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Myp-85-OAm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="57.121439280359823"/>
+        </scene>
+    </scenes>
+</document>

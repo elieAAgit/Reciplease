@@ -12,6 +12,10 @@
 		0D5EB5B624123B1E00C47417 /* ActivityIndicator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D5EB5B524123B1E00C47417 /* ActivityIndicator.storyboard */; };
 		0D5EB5BA24123F9E00C47417 /* ActivityIndicatorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EB5B924123F9E00C47417 /* ActivityIndicatorService.swift */; };
 		0D5EB5BF24127E5500C47417 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EB5BE24127E5500C47417 /* SearchService.swift */; };
+		0D5EB5C22412AFFF00C47417 /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D5EB5C12412AFFF00C47417 /* Alert.storyboard */; };
+		0D5EB5C52412BF8E00C47417 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EB5C42412BF8E00C47417 /* AlertViewController.swift */; };
+		0D5EB5C72412C0F400C47417 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EB5C62412C0F400C47417 /* AlertService.swift */; };
+		0D5EB5C92412C41A00C47417 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EB5C82412C41A00C47417 /* UIView.swift */; };
 		0D5F1D91241178CD005CB12D /* FavoritesRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5F1D90241178CD005CB12D /* FavoritesRecipes.swift */; };
 		0D63E338240FC5D000848299 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63E337240FC5D000848299 /* UIImageView.swift */; };
 		0D64334E240C300F008F0CB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64334D240C300F008F0CB4 /* AppDelegate.swift */; };
@@ -51,6 +55,10 @@
 		0D5EB5B524123B1E00C47417 /* ActivityIndicator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivityIndicator.storyboard; sourceTree = "<group>"; };
 		0D5EB5B924123F9E00C47417 /* ActivityIndicatorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorService.swift; sourceTree = "<group>"; };
 		0D5EB5BE24127E5500C47417 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		0D5EB5C12412AFFF00C47417 /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
+		0D5EB5C42412BF8E00C47417 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		0D5EB5C62412C0F400C47417 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		0D5EB5C82412C41A00C47417 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		0D5F1D90241178CD005CB12D /* FavoritesRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRecipes.swift; sourceTree = "<group>"; };
 		0D63E337240FC5D000848299 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		0D64334A240C300F008F0CB4 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +124,23 @@
 			path = "Activity Indicator";
 			sourceTree = "<group>";
 		};
+		0D5EB5C02412AFE100C47417 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				0D5EB5C12412AFFF00C47417 /* Alert.storyboard */,
+				0D5EB5C62412C0F400C47417 /* AlertService.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		0D5EB5C32412BF7200C47417 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				0D5EB5C42412BF8E00C47417 /* AlertViewController.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		0D5F1D8D2411282B005CB12D /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +153,7 @@
 		0D63E336240FC5A500848299 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				0D5EB5C82412C41A00C47417 /* UIView.swift */,
 				0D63E337240FC5D000848299 /* UIImageView.swift */,
 			);
 			path = Extension;
@@ -193,6 +219,7 @@
 				0D35E79B24104B66002926DD /* RecipeViewController.swift */,
 				0D6433D8240DAA87008F0CB4 /* FavoriteViewController.swift */,
 				0D5EB5BB241245EE00C47417 /* Activity Indicator */,
+				0D5EB5C32412BF7200C47417 /* Alert */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -202,6 +229,7 @@
 			children = (
 				0D643353240C300F008F0CB4 /* Main.storyboard */,
 				0D5EB5B224123AC200C47417 /* Activity Indicator */,
+				0D5EB5C02412AFE100C47417 /* Alert */,
 				0D658717240EFF5700D111A1 /* CustomCell */,
 				0D63E336240FC5A500848299 /* Extension */,
 			);
@@ -345,6 +373,7 @@
 				0D658710240E9B1300D111A1 /* ApiKeys.plist in Resources */,
 				0D64335A240C3018008F0CB4 /* Assets.xcassets in Resources */,
 				0D658716240EFF3A00D111A1 /* CustomTableViewCell.xib in Resources */,
+				0D5EB5C22412AFFF00C47417 /* Alert.storyboard in Resources */,
 				0D643355240C300F008F0CB4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,15 +438,18 @@
 				0D6433DB240DAAA7008F0CB4 /* SearchTableViewController.swift in Sources */,
 				0D35E79C24104B66002926DD /* RecipeViewController.swift in Sources */,
 				0D64334E240C300F008F0CB4 /* AppDelegate.swift in Sources */,
+				0D5EB5C52412BF8E00C47417 /* AlertViewController.swift in Sources */,
 				0D643377240C3B3A008F0CB4 /* SearchViewController.swift in Sources */,
 				0D65870E240E981600D111A1 /* ApiKeys.swift in Sources */,
 				0D65870A240E94E300D111A1 /* ApiUrl.swift in Sources */,
 				0D658715240EFF3A00D111A1 /* CustomTableViewCell.swift in Sources */,
 				0D658712240ED27C00D111A1 /* Recipes.swift in Sources */,
+				0D5EB5C92412C41A00C47417 /* UIView.swift in Sources */,
 				0D5EB5BF24127E5500C47417 /* SearchService.swift in Sources */,
 				0D5EB5B424123AFC00C47417 /* ActivityIndicatorViewController.swift in Sources */,
 				0D5EB5BA24123F9E00C47417 /* ActivityIndicatorService.swift in Sources */,
 				0D65870C240E957600D111A1 /* ApiService.swift in Sources */,
+				0D5EB5C72412C0F400C47417 /* AlertService.swift in Sources */,
 				0D658705240E7D4D00D111A1 /* SegueIdentifiers.swift in Sources */,
 				0D643350240C300F008F0CB4 /* SceneDelegate.swift in Sources */,
 				0D63E338240FC5D000848299 /* UIImageView.swift in Sources */,
