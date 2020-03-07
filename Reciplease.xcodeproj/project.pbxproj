@@ -20,6 +20,9 @@
 		0D5EB5CE2412CB9700C47417 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EB5CD2412CB9700C47417 /* Notification.swift */; };
 		0D5EB5D12412D46900C47417 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EB5D02412D46900C47417 /* ViewController.swift */; };
 		0D5F1D91241178CD005CB12D /* FavoritesRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5F1D90241178CD005CB12D /* FavoritesRecipes.swift */; };
+		0D61C72A2413EB830020013F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D61C7292413EB830020013F /* SettingsViewController.swift */; };
+		0D61C72E2413EEA90020013F /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D61C72D2413EEA90020013F /* UserPreferences.swift */; };
+		0D61C7302413F07C0020013F /* LanguageTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D61C72F2413F07C0020013F /* LanguageTranslation.swift */; };
 		0D63E338240FC5D000848299 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63E337240FC5D000848299 /* UIImageView.swift */; };
 		0D64334E240C300F008F0CB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64334D240C300F008F0CB4 /* AppDelegate.swift */; };
 		0D643350240C300F008F0CB4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D64334F240C300F008F0CB4 /* SceneDelegate.swift */; };
@@ -66,6 +69,9 @@
 		0D5EB5CD2412CB9700C47417 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		0D5EB5D02412D46900C47417 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0D5F1D90241178CD005CB12D /* FavoritesRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRecipes.swift; sourceTree = "<group>"; };
+		0D61C7292413EB830020013F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		0D61C72D2413EEA90020013F /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
+		0D61C72F2413F07C0020013F /* LanguageTranslation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTranslation.swift; sourceTree = "<group>"; };
 		0D63E337240FC5D000848299 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		0D64334A240C300F008F0CB4 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D64334D240C300F008F0CB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +179,15 @@
 			path = "Core Data";
 			sourceTree = "<group>";
 		};
+		0D61C7282413E9290020013F /* User Defaults */ = {
+			isa = PBXGroup;
+			children = (
+				0D61C72D2413EEA90020013F /* UserPreferences.swift */,
+				0D61C72F2413F07C0020013F /* LanguageTranslation.swift */,
+			);
+			path = "User Defaults";
+			sourceTree = "<group>";
+		};
 		0D63E336240FC5A500848299 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +256,7 @@
 				0D6433DA240DAAA7008F0CB4 /* SearchTableViewController.swift */,
 				0D35E79B24104B66002926DD /* RecipeViewController.swift */,
 				0D6433D8240DAA87008F0CB4 /* FavoriteViewController.swift */,
+				0D61C7292413EB830020013F /* SettingsViewController.swift */,
 				0D5EB5BB241245EE00C47417 /* Activity Indicator */,
 				0D5EB5C32412BF7200C47417 /* Alert */,
 				0D5EB5CF2412D43300C47417 /* Extensions */,
@@ -266,6 +282,7 @@
 				0D658706240E947400D111A1 /* Api */,
 				0D5F1D8D2411282B005CB12D /* Core Data */,
 				0D5EB5CA2412CADA00C47417 /* Extensions */,
+				0D61C7282413E9290020013F /* User Defaults */,
 				0D5EB5BE24127E5500C47417 /* SearchService.swift */,
 				0D658704240E7D4D00D111A1 /* SegueIdentifiers.swift */,
 			);
@@ -461,12 +478,14 @@
 			files = (
 				0D643358240C300F008F0CB4 /* Reciplease.xcdatamodeld in Sources */,
 				0D6433DB240DAAA7008F0CB4 /* SearchTableViewController.swift in Sources */,
+				0D61C7302413F07C0020013F /* LanguageTranslation.swift in Sources */,
 				0D35E79C24104B66002926DD /* RecipeViewController.swift in Sources */,
 				0D5EB5CE2412CB9700C47417 /* Notification.swift in Sources */,
 				0D64334E240C300F008F0CB4 /* AppDelegate.swift in Sources */,
 				0D5EB5C52412BF8E00C47417 /* AlertViewController.swift in Sources */,
 				0D5EB5D12412D46900C47417 /* ViewController.swift in Sources */,
 				0D643377240C3B3A008F0CB4 /* SearchViewController.swift in Sources */,
+				0D61C72A2413EB830020013F /* SettingsViewController.swift in Sources */,
 				0D65870E240E981600D111A1 /* ApiKeys.swift in Sources */,
 				0D65870A240E94E300D111A1 /* ApiUrl.swift in Sources */,
 				0D5EB5CC2412CB0900C47417 /* Notification.Name.swift in Sources */,
@@ -479,6 +498,7 @@
 				0D65870C240E957600D111A1 /* ApiService.swift in Sources */,
 				0D5EB5C72412C0F400C47417 /* AlertService.swift in Sources */,
 				0D658705240E7D4D00D111A1 /* SegueIdentifiers.swift in Sources */,
+				0D61C72E2413EEA90020013F /* UserPreferences.swift in Sources */,
 				0D643350240C300F008F0CB4 /* SceneDelegate.swift in Sources */,
 				0D63E338240FC5D000848299 /* UIImageView.swift in Sources */,
 				0D6433D9240DAA87008F0CB4 /* FavoriteViewController.swift in Sources */,

@@ -18,6 +18,10 @@ class RecipeViewController: UIViewController {
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var starNavigation: UIBarButtonItem!
 
+    // Show the right language
+    @IBOutlet weak var ingredientsLabel: UILabel!
+    @IBOutlet weak var getDirectionsButton: UIButton!
+
     /// Get data from SearchTableViewController
     var recipe: Hits?
     /// Recipe is in user favorites or not
@@ -30,6 +34,7 @@ class RecipeViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        displayLanguage()
         displayRecipe()
         favoriteRecipeOrNot()
     }
@@ -47,6 +52,21 @@ extension RecipeViewController {
 
 // MARK: - Display recipe
 extension RecipeViewController {
+    /// Display user language choice
+    private func displayLanguage() {
+        // display Spanish if Spanish is the user's choice
+        if UserPreferences.language == Language.spanish.rawValue {
+            ingredientsLabel.text = Spanish.ingredientsLabel
+            getDirectionsButton.setTitle(Spanish.getDirectionsButton, for: .normal)
+
+        // display English if Spanish is NOT the user's choice:
+        // English is the user's choice or user's choice is unknown (case of potential error)
+        } else {
+            ingredientsLabel.text = English.ingredientsLabel
+            getDirectionsButton.setTitle(English.getDirectionsButton, for: .normal)
+        }
+    }
+
     /// Display recipe details in the View
     private func displayRecipe() {
         guard let recipe = recipe?.recipe else { return }

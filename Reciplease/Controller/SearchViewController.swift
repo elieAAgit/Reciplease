@@ -13,6 +13,14 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchTableView: UITableView!
 
+    // Show the right language
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var ingredientsLabel: UILabel!
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var searchButton: UIButton!
+    
+
     /// Instance of SearchService
     let search = SearchService()
     /// To show activity indicator when a search is made
@@ -34,6 +42,34 @@ class SearchViewController: UIViewController {
 
     deinit {
         NotificationCenter.default.removeObserver(self, name: .alert, object: nil)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        displayLanguage()
+    }
+}
+
+// MARK: - Display user language choice
+extension SearchViewController {
+    /// display the user's choice language
+    private func displayLanguage() {
+        // display Spanish if Spanish is the user's choice
+        if UserPreferences.language == Language.spanish.rawValue {
+            titleLabel.text = Spanish.titleLabel
+            ingredientsLabel.text = Spanish.ingredientsLabel
+            addButton.setTitle(Spanish.addButton, for: .normal)
+            clearButton.setTitle(Spanish.clearButton, for: .normal)
+            searchButton.setTitle(Spanish.searchButton, for: .normal)
+
+        // display English if Spanish is NOT the user's choice:
+        // English is the user's choice or user's choice is unknown (case of potential error)
+        } else {
+            titleLabel.text = English.titleLabel
+            ingredientsLabel.text = English.ingredientsLabel
+            addButton.setTitle(English.addButton, for: .normal)
+            clearButton.setTitle(English.clearButton, for: .normal)
+            searchButton.setTitle(English.searchButton, for: .normal)
+        }
     }
 }
 
