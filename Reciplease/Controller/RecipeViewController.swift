@@ -9,7 +9,7 @@
 import UIKit
 
 class RecipeViewController: UIViewController {
-// MARK: - OUtlets and properties
+// MARK: - Outlets and properties
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var recipeLabel: UILabel!
     @IBOutlet weak var ingredientsTextView: UITextView!
@@ -17,7 +17,7 @@ class RecipeViewController: UIViewController {
     @IBOutlet weak var numberPartsLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var starNavigation: UIBarButtonItem!
-    
+
     /// Get data from SearchTableViewController
     var recipe: Hits?
     /// Recipe is in user favorites or not
@@ -83,6 +83,10 @@ extension RecipeViewController {
 
     /// Add or supress favorite
     @IBAction func favoriteButtonDidTapped(_ sender: Any) {
+        deleteOrAddRecipeToFavorite()
+    }
+    
+    private func deleteOrAddRecipeToFavorite() {
         // If the recipe is in the favorite, suppress the recipe
         if favorite == true {
             guard let recipeTitle = recipeLabel.text else { return }
@@ -94,17 +98,23 @@ extension RecipeViewController {
             favorite = false
             starNavigation.tintColor = .white
 
+            // Show alert to confirm deleting
+            Notification.alertNotification(alert: .deleteFavorite)
+
         // If the recipe is not in the favorite, add the recipe
         } else if favorite == false {
             guard let recipe = recipe?.recipe else { return }
 
-             // Add recipe in the database
+            // Add recipe in the database
             FavoritesRecipes.addRecipe(image: recipe.image, label: recipe.label, yield: recipe.yield,
                                        totalTime: recipe.totalTime, ingredientLines: recipe.ingredientLines)
 
             // Add recipe from favorites
             favorite = true
             starNavigation.tintColor = .yellow
+
+            // Show alert to confirm adding
+            Notification.alertNotification(alert: .addFavorite)
         }
     }
 }

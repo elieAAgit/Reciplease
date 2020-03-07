@@ -16,19 +16,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="owv-al-zRf" userLabel="Alert View">
-                                <rect key="frame" x="50" y="260.5" width="275" height="146.5"/>
+                                <rect key="frame" x="50" y="259.5" width="275" height="148.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdW-1z-nrz">
-                                        <rect key="frame" x="16" y="72" width="243" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdW-1z-nrz">
+                                        <rect key="frame" x="16" y="74" width="243" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ius-pZ-po2" userLabel="Title View">
-                                        <rect key="frame" x="0.0" y="0.0" width="275" height="56"/>
+                                        <rect key="frame" x="2" y="2" width="271" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdK-83-7FO">
-                                                <rect key="frame" x="8" y="16" width="259" height="24"/>
+                                                <rect key="frame" x="8" y="16" width="255" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -43,7 +43,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="nap-gb-fCl" userLabel="Buttons Stack View">
-                                        <rect key="frame" x="8" y="108.5" width="259" height="30"/>
+                                        <rect key="frame" x="8" y="110.5" width="259" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgi-X5-ZNb">
                                                 <rect key="frame" x="0.0" y="0.0" width="121.5" height="30"/>
@@ -72,13 +72,13 @@
                                 <constraints>
                                     <constraint firstAttribute="trailingMargin" secondItem="nap-gb-fCl" secondAttribute="trailing" id="B5E-WD-D9a"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="WdW-1z-nrz" secondAttribute="trailing" constant="8" id="B5V-yb-AtG"/>
-                                    <constraint firstItem="Ius-pZ-po2" firstAttribute="leading" secondItem="owv-al-zRf" secondAttribute="leading" id="F5H-DE-DwM"/>
+                                    <constraint firstItem="Ius-pZ-po2" firstAttribute="leading" secondItem="owv-al-zRf" secondAttribute="leading" constant="2" id="F5H-DE-DwM"/>
                                     <constraint firstItem="nap-gb-fCl" firstAttribute="top" secondItem="WdW-1z-nrz" secondAttribute="bottom" constant="16" id="MMf-yN-rS8"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ius-pZ-po2" secondAttribute="trailing" id="UBk-R8-KCT"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ius-pZ-po2" secondAttribute="trailing" constant="2" id="UBk-R8-KCT"/>
                                     <constraint firstItem="nap-gb-fCl" firstAttribute="leading" secondItem="owv-al-zRf" secondAttribute="leadingMargin" id="VeT-Zb-xIs"/>
                                     <constraint firstItem="WdW-1z-nrz" firstAttribute="top" secondItem="Ius-pZ-po2" secondAttribute="bottom" constant="16" id="Vyt-vv-eQg"/>
                                     <constraint firstAttribute="width" constant="275" id="YgL-iv-8Jz"/>
-                                    <constraint firstItem="Ius-pZ-po2" firstAttribute="top" secondItem="owv-al-zRf" secondAttribute="top" id="gEf-9t-dsx"/>
+                                    <constraint firstItem="Ius-pZ-po2" firstAttribute="top" secondItem="owv-al-zRf" secondAttribute="top" constant="2" id="gEf-9t-dsx"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="nap-gb-fCl" secondAttribute="bottom" id="u4c-M4-ZDK"/>
                                     <constraint firstItem="WdW-1z-nrz" firstAttribute="leading" secondItem="owv-al-zRf" secondAttribute="leadingMargin" constant="8" id="ufs-6r-z09"/>
                                 </constraints>

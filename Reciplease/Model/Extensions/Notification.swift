@@ -11,7 +11,7 @@ import Foundation
 extension Notification {
     /// List of alert cases
     enum Alert {
-        case error
+        case textFieldIsEmpty, noAliment, searchUnavailable, addFavorite, deleteFavorite
     }
 
     /// To use an alert

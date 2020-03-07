@@ -24,9 +24,16 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Observe to display alert
+        NotificationCenter.default.addObserver(self, selector: #selector(alert(notification:)), name: .alert, object: nil)
+
         searchTextField.delegate = self
         searchTableView.dataSource = self
         searchTableView.delegate = self
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .alert, object: nil)
     }
 }
 
@@ -59,7 +66,7 @@ extension SearchViewController {
         // If textField is empty
         } else {
             // Show alert
-            print("textField is empty")
+            Notification.alertNotification(alert: .textFieldIsEmpty)
         }
     }
 
@@ -120,7 +127,7 @@ extension SearchViewController {
     private func sendingOfData() {
         if search.aliments.isEmpty {
             // Show alert
-            print("no aliment")
+            Notification.alertNotification(alert: .noAliment)
 
         } else {
             present(activityIndicator.showActivityIndicator(), animated: true, completion: nil)
@@ -147,6 +154,7 @@ extension SearchViewController {
                     self.activityIndicator.dismissActivityController()
 
                     // Show alert
+                    Notification.alertNotification(alert: .searchUnavailable)
                 }
             }
         }

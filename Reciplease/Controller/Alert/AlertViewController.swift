@@ -21,6 +21,7 @@ class AlertViewController: UIViewController {
     var messageAlert: String?
     var actionAlert: String?
     var cancelAlert: Bool?
+    var callback: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,10 +53,10 @@ extension AlertViewController {
     /// Display or not cancel button
     private func DisplayCancelButtonOrNot() {
         if cancelAlert == true {
-            cancelLabel.isHidden = true
+            cancelLabel.isHidden = false
 
         } else {
-            cancelLabel.isHidden = false
+            cancelLabel.isHidden = true
         }
     }
 }
@@ -63,6 +64,8 @@ extension AlertViewController {
 // MARK: - Actions buttons
 extension AlertViewController {
     @IBAction func actionButtonDidTapped(_ sender: UIButton) {
+        callback?()
+
         dismiss(animated: true, completion: nil)
     }
 

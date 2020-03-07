@@ -10,7 +10,8 @@ import UIKit
 
 class AlertService {
     /// Function alert: add your title, message, action button title and if you need cancel button or not
-    static func alert(title: String, message: String, action: String, cancel: Bool) -> AlertViewController {
+    static func alert(title: String, message: String, action: String, cancel: Bool,
+                      callback: @escaping () -> Void) -> AlertViewController {
         let storyboard = UIStoryboard(name: "Alert", bundle: .main)
         let alertVC = storyboard.instantiateViewController(identifier: "alertVC") as! AlertViewController
 
@@ -19,6 +20,7 @@ class AlertService {
         alertVC.messageAlert = message
         alertVC.actionAlert = action
         alertVC.cancelAlert = cancel
+        alertVC.callback = callback
 
         return alertVC
     }
