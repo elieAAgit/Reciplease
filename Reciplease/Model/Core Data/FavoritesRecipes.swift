@@ -12,6 +12,31 @@ import CoreData
 class FavoritesRecipes: NSManagedObject {
     static let context = AppDelegate.viewContext
 
+    /// To load and updated data in tableView
+    static var fetchedResultsController: NSFetchedResultsController<FavoritesRecipes> = {
+        // Create Fetch Request
+        let fetchRequest: NSFetchRequest<FavoritesRecipes> = FavoritesRecipes.fetchRequest()
+
+        // Configure Fetch Request
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "label", ascending: true)]
+
+        // Create Fetched Results Controller
+        let fetchedResultsController = NSFetchedResultsController(
+            fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+
+        return fetchedResultsController
+    }()
+
+    /// Load fetch
+    static func loadPersistant() {
+        do {
+            try FavoritesRecipes.fetchedResultsController.performFetch()
+        } catch {
+            let fetchError = error as NSError
+            print("Unable to Perform Fetch Request")
+            print("\(fetchError), \(fetchError.localizedDescription)")
+        }
+    }
     /// Add recipe in Database as favorite
     static func addRecipe(image: String, label: String, yield: Int,
                            totalTime: Double, ingredientLines: [String]) {

@@ -85,21 +85,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;You don't have any favorites yet.&quot;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLK-re-VNt">
+                                <rect key="frame" x="58" y="277" width="259.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ihf-aT-Ezy">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                                 <color key="backgroundColor" red="0.20640501380000001" green="0.20040675999999999" blue="0.20027127859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.20640501380000001" green="0.20040675999999999" blue="0.20027127859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
+                        <color key="backgroundColor" red="0.20640501380000001" green="0.20040675999999999" blue="0.20027127859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="obm-E4-RkA" firstAttribute="bottom" secondItem="Ihf-aT-Ezy" secondAttribute="bottom" id="QHy-7i-Dff"/>
                             <constraint firstItem="Ihf-aT-Ezy" firstAttribute="top" secondItem="obm-E4-RkA" secondAttribute="top" id="hGH-Qy-UOR"/>
                             <constraint firstItem="obm-E4-RkA" firstAttribute="trailing" secondItem="Ihf-aT-Ezy" secondAttribute="trailing" id="nxu-nc-dvz"/>
                             <constraint firstItem="Ihf-aT-Ezy" firstAttribute="leading" secondItem="obm-E4-RkA" secondAttribute="leading" id="oTW-64-KYL"/>
+                            <constraint firstItem="DLK-re-VNt" firstAttribute="centerX" secondItem="TrK-EW-u93" secondAttribute="centerX" id="tFj-1X-NXc"/>
+                            <constraint firstItem="DLK-re-VNt" firstAttribute="centerY" secondItem="TrK-EW-u93" secondAttribute="centerY" id="u81-5n-uN8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="obm-E4-RkA"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="LqL-eB-POv"/>
                     <navigationItem key="navigationItem" title="Reciplease" id="6jZ-JL-5Bz"/>
+                    <connections>
+                        <outlet property="favoriteTableView" destination="Ihf-aT-Ezy" id="Xli-N9-TkA"/>
+                        <outlet property="missingFavoritesLabel" destination="DLK-re-VNt" id="Rpt-rg-QpP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FIU-Oe-Tp4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

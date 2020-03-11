@@ -24,7 +24,7 @@ class SearchTableViewController: UIViewController {
 
         // To use reusable custom cell
         let nib = UINib(nibName: "CustomTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "customCell")
+        tableView.register(nib, forCellReuseIdentifier: CustomTableViewCell.cellIdentifier)
     }
 }
 
@@ -40,10 +40,11 @@ extension SearchTableViewController: UITableViewDataSource {
         return passData?.hits.count ?? 0
     }
 
-    /// Display datas to the table view cell
+    /// Display data to the table view cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Using custom cell
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as? CustomTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.cellIdentifier)
+            as? CustomTableViewCell else {
             return UITableViewCell()
         }
 
@@ -54,8 +55,8 @@ extension SearchTableViewController: UITableViewDataSource {
 
         let recipeImage = recipe.image
         let recipeLabel = recipe.label
-        let ingredientsLabel = recipe.ingredientLines
-        let recipeLike = recipe.yield
+        let ingredientsLabel = recipe.ingredientLines.joined(separator: ", ")
+        let recipeLike = String(recipe.yield)
         let recipePreparation = recipe.totalTime
 
         // Pass data to the custom cell

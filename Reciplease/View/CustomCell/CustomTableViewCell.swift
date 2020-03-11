@@ -9,14 +9,17 @@
 import UIKit
 
 class CustomTableViewCell: UITableViewCell {
-// MARK: - Outlets
+// MARK: - Outlets and property
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var recipeLabel: UILabel!
     @IBOutlet weak var ingredientsLabel: UILabel!
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var recipeLikeLabel: UILabel!
     @IBOutlet weak var recipePreparationLabel: UILabel!
-    
+
+    /// Name of the custom cell
+    static let cellIdentifier = "customCell"
+
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -27,13 +30,14 @@ class CustomTableViewCell: UITableViewCell {
 // MARK: - Method
 extension CustomTableViewCell {
     /// To display data in custom cell
-    func displayrecipe(recipeImage: String, recipeLabel: String, ingredientsLabel: [String],
-                       recipeLikeLabel: Int, recipePreparationLabel: Double) {
+    func displayrecipe(recipeImage: String, recipeLabel: String, ingredientsLabel: String,
+                       recipeLikeLabel: String, recipePreparationLabel: Double) {
+
         // Display data in custom cell labels and image
         self.recipeImage.load(image: recipeImage)
         self.recipeLabel.text = recipeLabel
-        self.ingredientsLabel.text = ingredientsLabel.joined(separator: ", ")
-        self.recipeLikeLabel.text = String(recipeLikeLabel)
+        self.ingredientsLabel.text = ingredientsLabel
+        self.recipeLikeLabel.text = recipeLikeLabel
         self.recipePreparationLabel.text = String(format:"%.0f", recipePreparationLabel) + "m"
     }
 }
