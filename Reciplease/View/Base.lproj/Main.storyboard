@@ -109,10 +109,15 @@
                         <viewLayoutGuide key="safeArea" id="obm-E4-RkA"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="LqL-eB-POv"/>
-                    <navigationItem key="navigationItem" title="Reciplease" id="6jZ-JL-5Bz"/>
+                    <navigationItem key="navigationItem" title="Reciplease" id="UMW-fJ-O95">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="QRg-IX-On5">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="favoriteTableView" destination="Ihf-aT-Ezy" id="Xli-N9-TkA"/>
                         <outlet property="missingFavoritesLabel" destination="DLK-re-VNt" id="Rpt-rg-QpP"/>
+                        <segue destination="ebn-1B-Kce" kind="show" identifier="favoriteTableToRecipe" id="LSg-Cl-34a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FIU-Oe-Tp4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -596,4 +601,7 @@
         <image name="star.fill" catalog="system" width="64" height="58"/>
         <image name="wrench" catalog="system" width="64" height="60"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="LSg-Cl-34a"/>
+    </inferredMetricsTieBreakers>
 </document>

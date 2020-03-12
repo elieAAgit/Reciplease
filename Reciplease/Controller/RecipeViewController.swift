@@ -23,7 +23,7 @@ class RecipeViewController: UIViewController {
     @IBOutlet weak var getDirectionsButton: UIButton!
 
     /// Get data from SearchTableViewController
-    var recipe: Hits?
+    var recipeDetails: RecipeDetails?
     /// Recipe is in user favorites or not
     var favorite: Bool?
 
@@ -69,14 +69,14 @@ extension RecipeViewController {
 
     /// Display recipe details in the View
     private func displayRecipe() {
-        guard let recipe = recipe?.recipe else { return }
+        guard let recipe = recipeDetails else { return }
 
         // Display values
         recipeImage.load(image: recipe.image)
         recipeLabel.text = recipe.label
         numberPartsLabel.text = String(recipe.yield)
         durationLabel.text = String(format:"%.0f", recipe.totalTime) + "m"
-        ingredientsTextView.text = recipe.ingredientLines.joined(separator: "\n")
+        ingredientsTextView.text = recipe.ingredientsLabel
     }
 }
 
@@ -123,11 +123,11 @@ extension RecipeViewController {
 
         // If the recipe is not in the favorite, add the recipe
         } else if favorite == false {
-            guard let recipe = recipe?.recipe else { return }
+            guard let recipe = recipeDetails else { return }
 
             // Add recipe in the database
             FavoritesRecipes.addRecipe(image: recipe.image, label: recipe.label, yield: recipe.yield,
-                                       totalTime: recipe.totalTime, ingredientLines: recipe.ingredientLines)
+                                       totalTime: recipe.totalTime, ingredientLines: recipe.ingredientsLabel)
 
             // Add recipe from favorites
             favorite = true

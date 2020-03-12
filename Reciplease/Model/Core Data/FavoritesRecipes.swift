@@ -38,16 +38,16 @@ class FavoritesRecipes: NSManagedObject {
         }
     }
     /// Add recipe in Database as favorite
-    static func addRecipe(image: String, label: String, yield: Int,
-                           totalTime: Double, ingredientLines: [String]) {
+    static func addRecipe(image: String, label: String, yield: String,
+                           totalTime: Double, ingredientLines: String) {
         let favoritesRecipes = FavoritesRecipes(context: context)
 
         // Add data
         favoritesRecipes.label = label
         favoritesRecipes.image = image
-        favoritesRecipes.yield = String(yield)
+        favoritesRecipes.yield = yield
         favoritesRecipes.totalTime = totalTime
-        favoritesRecipes.ingredientLines = ingredientLines.joined(separator: "\n")
+        favoritesRecipes.ingredientLines = ingredientLines
 
         try? context.save()
     }

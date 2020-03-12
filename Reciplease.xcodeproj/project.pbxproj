@@ -34,6 +34,7 @@
 		0D643377240C3B3A008F0CB4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D643376240C3B3A008F0CB4 /* SearchViewController.swift */; };
 		0D6433D9240DAA87008F0CB4 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6433D8240DAA87008F0CB4 /* FavoriteViewController.swift */; };
 		0D6433DB240DAAA7008F0CB4 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6433DA240DAAA7008F0CB4 /* SearchTableViewController.swift */; };
+		0D657EFE241A36A000518953 /* RecipeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D657EFD241A36A000518953 /* RecipeDetails.swift */; };
 		0D658705240E7D4D00D111A1 /* SegueIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D658704240E7D4D00D111A1 /* SegueIdentifiers.swift */; };
 		0D65870A240E94E300D111A1 /* ApiUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D658709240E94E300D111A1 /* ApiUrl.swift */; };
 		0D65870C240E957600D111A1 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D65870B240E957600D111A1 /* ApiService.swift */; };
@@ -87,6 +88,7 @@
 		0D643376240C3B3A008F0CB4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0D6433D8240DAA87008F0CB4 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		0D6433DA240DAAA7008F0CB4 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		0D657EFD241A36A000518953 /* RecipeDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetails.swift; sourceTree = "<group>"; };
 		0D658704240E7D4D00D111A1 /* SegueIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueIdentifiers.swift; sourceTree = "<group>"; };
 		0D658709240E94E300D111A1 /* ApiUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUrl.swift; sourceTree = "<group>"; };
 		0D65870B240E957600D111A1 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
@@ -254,8 +256,8 @@
 			children = (
 				0D643376240C3B3A008F0CB4 /* SearchViewController.swift */,
 				0D6433DA240DAAA7008F0CB4 /* SearchTableViewController.swift */,
-				0D35E79B24104B66002926DD /* RecipeViewController.swift */,
 				0D6433D8240DAA87008F0CB4 /* FavoriteViewController.swift */,
+				0D35E79B24104B66002926DD /* RecipeViewController.swift */,
 				0D61C7292413EB830020013F /* SettingsViewController.swift */,
 				0D5EB5BB241245EE00C47417 /* Activity Indicator */,
 				0D5EB5C32412BF7200C47417 /* Alert */,
@@ -284,6 +286,7 @@
 				0D5EB5CA2412CADA00C47417 /* Extensions */,
 				0D61C7282413E9290020013F /* User Defaults */,
 				0D5EB5BE24127E5500C47417 /* SearchService.swift */,
+				0D657EFD241A36A000518953 /* RecipeDetails.swift */,
 				0D658704240E7D4D00D111A1 /* SegueIdentifiers.swift */,
 			);
 			path = Model;
@@ -484,6 +487,7 @@
 				0D64334E240C300F008F0CB4 /* AppDelegate.swift in Sources */,
 				0D5EB5C52412BF8E00C47417 /* AlertViewController.swift in Sources */,
 				0D5EB5D12412D46900C47417 /* ViewController.swift in Sources */,
+				0D657EFE241A36A000518953 /* RecipeDetails.swift in Sources */,
 				0D643377240C3B3A008F0CB4 /* SearchViewController.swift in Sources */,
 				0D61C72A2413EB830020013F /* SettingsViewController.swift in Sources */,
 				0D65870E240E981600D111A1 /* ApiKeys.swift in Sources */,

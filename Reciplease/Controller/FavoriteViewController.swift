@@ -10,9 +10,12 @@ import UIKit
 import CoreData
 
 class FavoriteViewController: UIViewController {
-// MARK: - Outlets
+// MARK: - Outlets and property
     @IBOutlet weak var missingFavoritesLabel: UILabel!
     @IBOutlet weak var favoriteTableView: UITableView!
+
+    /// To pass recipe between controller
+    var recipeDetails: RecipeDetails?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,4 +122,34 @@ extension FavoriteViewController: NSFetchedResultsControllerDelegate {
     }
 }
 
-extension FavoriteViewController: UITableViewDelegate {}
+// MARK: - Use UITableViewDelegate to access recipe detail
+extension FavoriteViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Fetch recipes
+        let recipe = FavoritesRecipes.fetchedResultsController.object(at: indexPath)
+
+        // Access the recipe details
+        guard let image = recipe.image else { return }
+        guard let label = recipe.label else { return }
+        guard let ingredients = recipe.ingredientLines else { return }
+        guard let yield = recipe.yield else { return }
+
+        // Recipe for RecipeViewController
+        recipeDetails = RecipeDetails(image: image, label: label, ingredients: ingredients,
+                                      yield: yield, totalTime: recipe.totalTime)
+
+        performSegue(withIdentifier: SegueIdentifiers.favoriteTableToRecipe.rawValue, sender: self)
+    }
+}
+
+// MARK: - Prepare segue
+extension FavoriteViewController {
+    /// Prepare data for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SegueIdentifiers.favoriteTableToRecipe.rawValue {
+            let recipeViewController = segue.destination as! RecipeViewController
+            // Pass recipe between controllers
+            recipeViewController.recipeDetails = recipeDetails
+        }
+    }
+}

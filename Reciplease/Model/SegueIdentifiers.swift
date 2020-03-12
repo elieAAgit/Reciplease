@@ -12,4 +12,5 @@ import Foundation
 enum SegueIdentifiers: String {
     case searchToSearchTableView = "searchToSearchTableView"
     case searchTableViewToRecipe = "searchTableViewToRecipe"
+    case favoriteTableToRecipe = "favoriteTableToRecipe"
 }
