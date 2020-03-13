@@ -34,6 +34,7 @@
 		0D643377240C3B3A008F0CB4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D643376240C3B3A008F0CB4 /* SearchViewController.swift */; };
 		0D6433D9240DAA87008F0CB4 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6433D8240DAA87008F0CB4 /* FavoriteViewController.swift */; };
 		0D6433DB240DAAA7008F0CB4 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6433DA240DAAA7008F0CB4 /* SearchTableViewController.swift */; };
+		0D652CFE241B883300AF2E51 /* UIButtonRounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D652CFD241B883300AF2E51 /* UIButtonRounded.swift */; };
 		0D657EFE241A36A000518953 /* RecipeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D657EFD241A36A000518953 /* RecipeDetails.swift */; };
 		0D658705240E7D4D00D111A1 /* SegueIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D658704240E7D4D00D111A1 /* SegueIdentifiers.swift */; };
 		0D65870A240E94E300D111A1 /* ApiUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D658709240E94E300D111A1 /* ApiUrl.swift */; };
@@ -88,6 +89,7 @@
 		0D643376240C3B3A008F0CB4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0D6433D8240DAA87008F0CB4 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		0D6433DA240DAAA7008F0CB4 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		0D652CFD241B883300AF2E51 /* UIButtonRounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonRounded.swift; sourceTree = "<group>"; };
 		0D657EFD241A36A000518953 /* RecipeDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetails.swift; sourceTree = "<group>"; };
 		0D658704240E7D4D00D111A1 /* SegueIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueIdentifiers.swift; sourceTree = "<group>"; };
 		0D658709240E94E300D111A1 /* ApiUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUrl.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			children = (
 				0D5EB5C82412C41A00C47417 /* UIView.swift */,
 				0D63E337240FC5D000848299 /* UIImageView.swift */,
+				0D652CFD241B883300AF2E51 /* UIButtonRounded.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -281,13 +284,13 @@
 		0D643375240C308A008F0CB4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0D5EB5BE24127E5500C47417 /* SearchService.swift */,
+				0D657EFD241A36A000518953 /* RecipeDetails.swift */,
+				0D658704240E7D4D00D111A1 /* SegueIdentifiers.swift */,
 				0D658706240E947400D111A1 /* Api */,
 				0D5F1D8D2411282B005CB12D /* Core Data */,
 				0D5EB5CA2412CADA00C47417 /* Extensions */,
 				0D61C7282413E9290020013F /* User Defaults */,
-				0D5EB5BE24127E5500C47417 /* SearchService.swift */,
-				0D657EFD241A36A000518953 /* RecipeDetails.swift */,
-				0D658704240E7D4D00D111A1 /* SegueIdentifiers.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -307,8 +310,8 @@
 		0D658717240EFF5700D111A1 /* CustomCell */ = {
 			isa = PBXGroup;
 			children = (
-				0D658713240EFF3A00D111A1 /* CustomTableViewCell.swift */,
 				0D658714240EFF3A00D111A1 /* CustomTableViewCell.xib */,
+				0D658713240EFF3A00D111A1 /* CustomTableViewCell.swift */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				0D5EB5C52412BF8E00C47417 /* AlertViewController.swift in Sources */,
 				0D5EB5D12412D46900C47417 /* ViewController.swift in Sources */,
 				0D657EFE241A36A000518953 /* RecipeDetails.swift in Sources */,
+				0D652CFE241B883300AF2E51 /* UIButtonRounded.swift in Sources */,
 				0D643377240C3B3A008F0CB4 /* SearchViewController.swift in Sources */,
 				0D61C72A2413EB830020013F /* SettingsViewController.swift in Sources */,
 				0D65870E240E981600D111A1 /* ApiKeys.swift in Sources */,

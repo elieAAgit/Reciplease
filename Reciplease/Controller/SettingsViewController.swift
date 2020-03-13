@@ -14,7 +14,7 @@ class SettingsViewController: UIViewController {
 
     // Show the right language
     @IBOutlet weak var choiceLabel: UILabel!
-    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var saveButton: UIButtonRounded!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +68,9 @@ extension SettingsViewController {
 // MARK: - Button action
 extension SettingsViewController {
     /// When user save is preference
-    @IBAction func saveDidTapped(_ sender: UIButton) {
+    @IBAction func saveDidTapped(_ sender: UIButtonRounded) {
+        sender.animated()
+
         // Select new preference
         if languageChoice.selectedSegmentIndex == 0 {
             UserPreferences.language = Language.english.rawValue

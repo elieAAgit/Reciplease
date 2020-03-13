@@ -20,7 +20,7 @@ class RecipeViewController: UIViewController {
 
     // Show the right language
     @IBOutlet weak var ingredientsLabel: UILabel!
-    @IBOutlet weak var getDirectionsButton: UIButton!
+    @IBOutlet weak var getDirectionsButton: UIButtonRounded!
 
     /// Get data from SearchTableViewController
     var recipeDetails: RecipeDetails?
@@ -42,7 +42,9 @@ class RecipeViewController: UIViewController {
 
 // MARK: - Go to directions
 extension RecipeViewController {
-    @IBAction func getDirectionsDidTapped(_ sender: UIButton) {
+    @IBAction func getDirectionsDidTapped(_ sender: UIButtonRounded) {
+        sender.animated()
+
         goToDirections()
     }
 

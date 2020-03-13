@@ -16,9 +16,9 @@ class SearchViewController: UIViewController {
     // Show the right language
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ingredientsLabel: UILabel!
-    @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var clearButton: UIButton!
-    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var addButton: UIButtonRounded!
+    @IBOutlet weak var clearButton: UIButtonRounded!
+    @IBOutlet weak var searchButton: UIButtonRounded!
     
 
     /// Instance of SearchService
@@ -76,7 +76,9 @@ extension SearchViewController {
 // MARK: - Actions buttons
 extension SearchViewController {
     /// Add aliment to the aliments user selection
-    @IBAction func addButtonDidTapped(_ sender: UIButton) {
+    @IBAction func addButtonDidTapped(_ sender: UIButtonRounded) {
+        sender.animated()
+
         addAliment()
     }
 
@@ -107,7 +109,9 @@ extension SearchViewController {
     }
 
     /// Clear the selection of aliments and suppress all entries
-    @IBAction func clearButtonDidTapped(_ sender: UIButton) {
+    @IBAction func clearButtonDidTapped(_ sender: UIButtonRounded) {
+        sender.animated()
+
         search.deleteAliments()
         searchTableView.reloadData()
     }
@@ -155,7 +159,9 @@ extension SearchViewController: UITableViewDelegate {
 // MARK: - Network call with Alamofire to search recipes
 extension SearchViewController {
     /// Segue to SearchTableViewController. Passing data
-    @IBAction func searchButtonDidTapped(_ sender: UIButton) {
+    @IBAction func searchButtonDidTapped(_ sender: UIButtonRounded) {
+        sender.animated()
+
         sendingOfData()
     }
 
