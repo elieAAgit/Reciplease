@@ -45,10 +45,9 @@ extension RecipeViewController {
     @IBAction func getDirectionsDidTapped(_ sender: UIButtonRounded) {
         sender.animated()
 
-        goToDirections()
-    }
+        guard let url = recipeDetails?.url else { return }
 
-    private func goToDirections() {
+        webViewRecipe(urlString: url)
     }
 }
 
@@ -74,10 +73,10 @@ extension RecipeViewController {
         guard let recipe = recipeDetails else { return }
 
         // Display values
-        recipeImage.load(image: recipe.image)
+        recipeImage.load(image: recipe.imageUrl)
         recipeLabel.text = recipe.label
         numberPartsLabel.text = String(recipe.yield)
-        durationLabel.text = String(format:"%.0f", recipe.totalTime) + "m"
+        durationLabel.text = String(format:"%.0f", recipe.totalTime) + " m"
         ingredientsTextView.text = recipe.ingredientsLabel
     }
 }
@@ -128,8 +127,8 @@ extension RecipeViewController {
             guard let recipe = recipeDetails else { return }
 
             // Add recipe in the database
-            FavoritesRecipes.addRecipe(image: recipe.image, label: recipe.label, yield: recipe.yield,
-                                       totalTime: recipe.totalTime, ingredientLines: recipe.ingredientsLabel)
+            FavoritesRecipes.addRecipe(image: recipe.imageUrl, label: recipe.label, yield: recipe.yield,
+                                       totalTime: recipe.totalTime, ingredientLines: recipe.ingredientsLabel, url: recipe.url)
 
             // Add recipe from favorites
             favorite = true

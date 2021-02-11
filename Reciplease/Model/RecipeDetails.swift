@@ -11,17 +11,22 @@ import Foundation
 /// To create recipe object
 class RecipeDetails {
     // Properties used to display the details of a recipe
-    var image: String
+    var imageUrl: String
     var label: String
     var ingredientsLabel: String
     var yield: String
     var totalTime: Double
+
+    // Link
+    var url: String
     
-    init(image: String, label: String, ingredients: String, yield: String, totalTime: Double) {
-        self.image = image
+    init(imageUrl: String, label: String, ingredients: String, yield: String, totalTime: Double, url: String) {
+
+        self.imageUrl = imageUrl
         self.label = label
         self.ingredientsLabel = ingredients
         self.yield = yield
         self.totalTime = totalTime
+        self.url = url
     }
 }

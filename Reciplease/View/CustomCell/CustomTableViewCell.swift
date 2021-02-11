@@ -38,6 +38,6 @@ extension CustomTableViewCell {
         self.recipeLabel.text = recipeLabel
         self.ingredientsLabel.text = ingredientsLabel
         self.recipeLikeLabel.text = recipeLikeLabel
-        self.recipePreparationLabel.text = String(format:"%.0f", recipePreparationLabel) + "m"
+        self.recipePreparationLabel.text = String(format:"%.0f", recipePreparationLabel) + " m"
     }
 }

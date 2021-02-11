@@ -37,9 +37,10 @@ class FavoritesRecipes: NSManagedObject {
             print("\(fetchError), \(fetchError.localizedDescription)")
         }
     }
+
     /// Add recipe in Database as favorite
     static func addRecipe(image: String, label: String, yield: String,
-                           totalTime: Double, ingredientLines: String) {
+                          totalTime: Double, ingredientLines: String, url: String) {
         let favoritesRecipes = FavoritesRecipes(context: context)
 
         // Add data
@@ -48,6 +49,7 @@ class FavoritesRecipes: NSManagedObject {
         favoritesRecipes.yield = yield
         favoritesRecipes.totalTime = totalTime
         favoritesRecipes.ingredientLines = ingredientLines
+        favoritesRecipes.url = url
 
         try? context.save()
     }

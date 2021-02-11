@@ -4,4 +4,6 @@ use_frameworks!
 
 target 'Reciplease' do
 pod 'Alamofire', '~> 5.0'
+pod 'AlamofireImage'
+
 end

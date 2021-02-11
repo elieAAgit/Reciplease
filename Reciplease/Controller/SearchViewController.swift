@@ -145,12 +145,10 @@ extension SearchViewController: UITableViewDataSource {
 extension SearchViewController: UITableViewDelegate {
     /// Delete aliment in table view
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let delete = UIContextualAction(style: .destructive, title: "X") { (action, view, success) in
+        let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, view, success) in
             self.search.removeAliment(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
-
-        delete.backgroundColor = .gray
 
         return UISwipeActionsConfiguration(actions: [delete])
     }

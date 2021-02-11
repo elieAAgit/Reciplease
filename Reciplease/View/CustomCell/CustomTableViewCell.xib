@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,8 +17,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="350" height="220"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eOG-7A-gZ2" userLabel="Recipe Image View">
-                        <rect key="frame" x="0.0" y="0.0" width="350" height="220"/>
+                    <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eOG-7A-gZ2" userLabel="Recipe Image View">
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="219"/>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                     </imageView>
@@ -52,7 +53,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.20640501380000001" green="0.20040675999999999" blue="0.20027127859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.2273537219" green="0.22791644929999999" blue="0.23456817869999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Rxh-JI-fXQ" firstAttribute="top" secondItem="9w5-ob-dP9" secondAttribute="top" constant="8" id="2YW-7J-dxQ"/>
                                     <constraint firstAttribute="bottom" secondItem="4Jj-el-X37" secondAttribute="bottom" constant="8" id="Bjo-Dn-rPn"/>
@@ -104,7 +105,7 @@
                     <constraint firstAttribute="bottom" secondItem="e2i-lp-uV3" secondAttribute="bottom" id="eFv-hQ-Mmy"/>
                     <constraint firstItem="O63-2s-N8I" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="hK1-3o-B5w"/>
                     <constraint firstAttribute="trailing" secondItem="e2i-lp-uV3" secondAttribute="trailing" id="hWH-no-Qje"/>
-                    <constraint firstAttribute="bottom" secondItem="eOG-7A-gZ2" secondAttribute="bottom" id="nf0-1O-5Zn"/>
+                    <constraint firstAttribute="bottom" secondItem="eOG-7A-gZ2" secondAttribute="bottom" constant="1" id="nf0-1O-5Zn"/>
                     <constraint firstItem="eOG-7A-gZ2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="pAt-jA-Pdd"/>
                     <constraint firstAttribute="bottom" secondItem="O63-2s-N8I" secondAttribute="bottom" id="tPW-sC-rDf"/>
                 </constraints>
@@ -122,7 +123,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="chart.pie" catalog="system" width="64" height="60"/>
-        <image name="clock" catalog="system" width="64" height="60"/>
+        <image name="chart.pie" catalog="system" width="128" height="121"/>
+        <image name="clock" catalog="system" width="128" height="121"/>
     </resources>
 </document>

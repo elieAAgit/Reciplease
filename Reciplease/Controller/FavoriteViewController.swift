@@ -133,10 +133,11 @@ extension FavoriteViewController: UITableViewDelegate {
         guard let label = recipe.label else { return }
         guard let ingredients = recipe.ingredientLines else { return }
         guard let yield = recipe.yield else { return }
+        guard let url = recipe.url else { return }
 
         // Recipe for RecipeViewController
-        recipeDetails = RecipeDetails(image: image, label: label, ingredients: ingredients,
-                                      yield: yield, totalTime: recipe.totalTime)
+        recipeDetails = RecipeDetails(imageUrl: image, label: label, ingredients: ingredients,
+                                      yield: yield, totalTime: recipe.totalTime, url: url)
 
         performSegue(withIdentifier: SegueIdentifiers.favoriteTableToRecipe.rawValue, sender: self)
     }

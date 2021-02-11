@@ -78,8 +78,8 @@ extension SearchTableViewController: UITableViewDelegate {
         let yield = String(recipe.yield)
 
         // Recipe for RecipeViewController
-        recipeDetails = RecipeDetails(image: recipe.image, label: recipe.label, ingredients: ingredients,
-                                      yield: yield, totalTime: recipe.totalTime)
+        recipeDetails = RecipeDetails(imageUrl: recipe.image, label: recipe.label, ingredients: ingredients,
+                                      yield: yield, totalTime: recipe.totalTime, url: recipe.url)
 
         performSegue(withIdentifier: SegueIdentifiers.searchTableViewToRecipe.rawValue, sender: self)
     }
