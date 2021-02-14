@@ -6,11 +6,31 @@
 //  Copyright © 2020 Elie Arquier. All rights reserved.
 //
 
+import Alamofire
+import AlamofireImage
 import UIKit
 
 extension UIImageView {
     /// Display image on custom table view cell. Method that allows a more fluid display of images
-    func load(image: String) {
+    func load(imageUrl: String) {
+        AF.request(imageUrl, method: .get).response { response in
+
+        switch response.result {
+            case .success(_):
+                guard let image = UIImage(data:response.data!) else {
+                    // Handle error
+                    return
+                }
+                let imageData = image.jpegData(compressionQuality: 1.0)
+                self.image = UIImage(data: imageData!)
+                
+            case .failure(_):
+                self.image = UIImage(named: "default")!
+            }
+        }
+    }
+
+    /*func load(image: String) {
         fetchImage(from: image) { (imageData) in
             if let data = imageData {
                 // referenced imageView from main thread
@@ -39,5 +59,5 @@ extension UIImageView {
         }
             
         dataTask.resume()
-    }
+    }*/
 }

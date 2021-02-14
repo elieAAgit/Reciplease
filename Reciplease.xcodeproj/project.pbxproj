@@ -30,7 +30,6 @@
 		0D643358240C300F008F0CB4 /* Reciplease.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0D643356240C300F008F0CB4 /* Reciplease.xcdatamodeld */; };
 		0D64335A240C3018008F0CB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D643359240C3018008F0CB4 /* Assets.xcassets */; };
 		0D64335D240C3018008F0CB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D64335B240C3018008F0CB4 /* LaunchScreen.storyboard */; };
-		0D643368240C3019008F0CB4 /* RecipleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D643367240C3019008F0CB4 /* RecipleaseTests.swift */; };
 		0D643377240C3B3A008F0CB4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D643376240C3B3A008F0CB4 /* SearchViewController.swift */; };
 		0D6433D9240DAA87008F0CB4 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6433D8240DAA87008F0CB4 /* FavoriteViewController.swift */; };
 		0D6433DB240DAAA7008F0CB4 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6433DA240DAAA7008F0CB4 /* SearchTableViewController.swift */; };
@@ -44,6 +43,13 @@
 		0D658712240ED27C00D111A1 /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D658711240ED27C00D111A1 /* Recipes.swift */; };
 		0D658715240EFF3A00D111A1 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D658713240EFF3A00D111A1 /* CustomTableViewCell.swift */; };
 		0D658716240EFF3A00D111A1 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D658714240EFF3A00D111A1 /* CustomTableViewCell.xib */; };
+		0DDA860825D872B500C34E43 /* FakeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA860725D872B500C34E43 /* FakeResponse.swift */; };
+		0DDA860E25D8731F00C34E43 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA860D25D8731F00C34E43 /* FakeResponseData.swift */; };
+		0DDA861225D87D5E00C34E43 /* ApiSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA861125D87D5E00C34E43 /* ApiSessionFake.swift */; };
+		0DDA861D25D9847400C34E43 /* AlamofireSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA861C25D9847400C34E43 /* AlamofireSession.swift */; };
+		0DDA862725D98CBE00C34E43 /* RecipeRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA862625D98CBE00C34E43 /* RecipeRequestProtocol.swift */; };
+		0DDA862F25D9B80700C34E43 /* ApiServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA862E25D9B80700C34E43 /* ApiServiceTests.swift */; };
+		0DDA863525D9C10000C34E43 /* Recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA863425D9C0FF00C34E43 /* Recipes.json */; };
 		673517B4BC6DAFF1F590EB6F /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0F9942682DA6DED158C9A40 /* Pods_Reciplease.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,7 +90,6 @@
 		0D64335C240C3018008F0CB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D64335E240C3018008F0CB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D643363240C3019008F0CB4 /* RecipleaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D643367240C3019008F0CB4 /* RecipleaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseTests.swift; sourceTree = "<group>"; };
 		0D643369240C3019008F0CB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D643376240C3B3A008F0CB4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0D6433D8240DAA87008F0CB4 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +104,13 @@
 		0D658711240ED27C00D111A1 /* Recipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
 		0D658713240EFF3A00D111A1 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		0D658714240EFF3A00D111A1 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		0DDA860725D872B500C34E43 /* FakeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponse.swift; sourceTree = "<group>"; };
+		0DDA860D25D8731F00C34E43 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
+		0DDA861125D87D5E00C34E43 /* ApiSessionFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiSessionFake.swift; sourceTree = "<group>"; };
+		0DDA861C25D9847400C34E43 /* AlamofireSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireSession.swift; sourceTree = "<group>"; };
+		0DDA862625D98CBE00C34E43 /* RecipeRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRequestProtocol.swift; sourceTree = "<group>"; };
+		0DDA862E25D9B80700C34E43 /* ApiServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceTests.swift; sourceTree = "<group>"; };
+		0DDA863425D9C0FF00C34E43 /* Recipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Recipes.json; sourceTree = "<group>"; };
 		840508822642CBEBC5207592 /* Pods-Reciplease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.release.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.release.xcconfig"; sourceTree = "<group>"; };
 		A13FF07C3318DD8F7DFDC5F3 /* Pods-Reciplease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.debug.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.debug.xcconfig"; sourceTree = "<group>"; };
 		F0F9942682DA6DED158C9A40 /* Pods_Reciplease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reciplease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,8 +249,9 @@
 		0D643366240C3019008F0CB4 /* RecipleaseTests */ = {
 			isa = PBXGroup;
 			children = (
-				0D643367240C3019008F0CB4 /* RecipleaseTests.swift */,
+				0DDA860625D8726D00C34E43 /* ApiTests */,
 				0D643369240C3019008F0CB4 /* Info.plist */,
+				0DDA863425D9C0FF00C34E43 /* Recipes.json */,
 			);
 			path = RecipleaseTests;
 			sourceTree = "<group>";
@@ -299,6 +312,8 @@
 			isa = PBXGroup;
 			children = (
 				0D65870B240E957600D111A1 /* ApiService.swift */,
+				0DDA861C25D9847400C34E43 /* AlamofireSession.swift */,
+				0DDA862625D98CBE00C34E43 /* RecipeRequestProtocol.swift */,
 				0D658709240E94E300D111A1 /* ApiUrl.swift */,
 				0D65870D240E981600D111A1 /* ApiKeys.swift */,
 				0D65870F240E9B1300D111A1 /* ApiKeys.plist */,
@@ -314,6 +329,17 @@
 				0D658713240EFF3A00D111A1 /* CustomTableViewCell.swift */,
 			);
 			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		0DDA860625D8726D00C34E43 /* ApiTests */ = {
+			isa = PBXGroup;
+			children = (
+				0DDA860725D872B500C34E43 /* FakeResponse.swift */,
+				0DDA860D25D8731F00C34E43 /* FakeResponseData.swift */,
+				0DDA861125D87D5E00C34E43 /* ApiSessionFake.swift */,
+				0DDA862E25D9B80700C34E43 /* ApiServiceTests.swift */,
+			);
+			path = ApiTests;
 			sourceTree = "<group>";
 		};
 		50E3D77D4A9AF355B046646B /* Frameworks */ = {
@@ -430,6 +456,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DDA863525D9C10000C34E43 /* Recipes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +512,7 @@
 				0D643358240C300F008F0CB4 /* Reciplease.xcdatamodeld in Sources */,
 				0D6433DB240DAAA7008F0CB4 /* SearchTableViewController.swift in Sources */,
 				0D61C7302413F07C0020013F /* LanguageTranslation.swift in Sources */,
+				0DDA861D25D9847400C34E43 /* AlamofireSession.swift in Sources */,
 				0D35E79C24104B66002926DD /* RecipeViewController.swift in Sources */,
 				0D5EB5CE2412CB9700C47417 /* Notification.swift in Sources */,
 				0D64334E240C300F008F0CB4 /* AppDelegate.swift in Sources */,
@@ -494,6 +522,7 @@
 				0D652CFE241B883300AF2E51 /* UIButtonRounded.swift in Sources */,
 				0D643377240C3B3A008F0CB4 /* SearchViewController.swift in Sources */,
 				0D61C72A2413EB830020013F /* SettingsViewController.swift in Sources */,
+				0DDA862725D98CBE00C34E43 /* RecipeRequestProtocol.swift in Sources */,
 				0D65870E240E981600D111A1 /* ApiKeys.swift in Sources */,
 				0D65870A240E94E300D111A1 /* ApiUrl.swift in Sources */,
 				0D5EB5CC2412CB0900C47417 /* Notification.Name.swift in Sources */,
@@ -518,7 +547,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D643368240C3019008F0CB4 /* RecipleaseTests.swift in Sources */,
+				0DDA861225D87D5E00C34E43 /* ApiSessionFake.swift in Sources */,
+				0DDA860825D872B500C34E43 /* FakeResponse.swift in Sources */,
+				0DDA860E25D8731F00C34E43 /* FakeResponseData.swift in Sources */,
+				0DDA862F25D9B80700C34E43 /* ApiServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,7 +634,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -656,7 +688,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

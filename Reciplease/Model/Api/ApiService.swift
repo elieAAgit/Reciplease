@@ -7,26 +7,33 @@
 //
 
 import Foundation
-import Alamofire
 
-struct ApiService {
-    // Singleton pattern
-    static var shared = ApiService()
-    private init() {}
+final class ApiService {
 
-    typealias completion = (Bool, Recipes?) -> Void
+    private let recipeRequest: RecipeRequest
+    
+    init(recipeRequest: RecipeRequest = AlamofireSession()) {
+        self.recipeRequest = recipeRequest
+    }
 
     /// Alamofire request
-    func getRecipe(url: String, completion: @escaping completion) {
-        AF.request(url).validate().responseData { (response) in
-            switch response.result {
-                case .success(let value):
-                    let recipes = try? JSONDecoder().decode(Recipes.self, from: value)
-                    completion(true, recipes)
-                case .failure(let error):
-                    completion(false, nil)
-                    print(error)
+    func getRecipe(url: String, completion: @escaping (Bool, Recipes?) -> Void) {
+
+        recipeRequest.getRecipe(url: url) { responseData in
+            guard responseData.response?.statusCode == 200 else {
+                completion(false, nil)
+                return
             }
+            guard let data = responseData.data else {
+                completion(false, nil)
+                return
+            }
+            guard let recipeSearch = try? JSONDecoder().decode(Recipes.self, from: data) else {
+                completion(false, nil)
+                return
+            }
+            completion(true, recipeSearch)
+            
         }
     }
 }

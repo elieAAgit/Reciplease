@@ -34,7 +34,7 @@ extension CustomTableViewCell {
                        recipeLikeLabel: String, recipePreparationLabel: Double) {
 
         // Display data in custom cell labels and image
-        self.recipeImage.load(image: recipeImage)
+        self.recipeImage.load(imageUrl: recipeImage)
         self.recipeLabel.text = recipeLabel
         self.ingredientsLabel.text = ingredientsLabel
         self.recipeLikeLabel.text = recipeLikeLabel

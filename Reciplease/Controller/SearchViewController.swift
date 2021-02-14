@@ -21,6 +21,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchButton: UIButtonRounded!
     
 
+    let apiService = ApiService()
     /// Instance of SearchService
     let search = SearchService()
     /// To show activity indicator when a search is made
@@ -176,7 +177,7 @@ extension SearchViewController {
             search.addAlimentsToParameters()
 
             // Network call
-            ApiService.shared.getRecipe(url: ApiUrl.edamanUrl) { (success, response) in
+            apiService.getRecipe(url: ApiUrl.edamanUrl) { (success, response) in
                 if success {
                     // Dismiss activity indicator
                     self.activityIndicator.dismissActivityController()

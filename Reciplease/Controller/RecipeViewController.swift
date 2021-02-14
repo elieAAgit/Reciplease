@@ -73,7 +73,7 @@ extension RecipeViewController {
         guard let recipe = recipeDetails else { return }
 
         // Display values
-        recipeImage.load(image: recipe.imageUrl)
+        recipeImage.load(imageUrl: recipe.imageUrl)
         recipeLabel.text = recipe.label
         numberPartsLabel.text = String(recipe.yield)
         durationLabel.text = String(format:"%.0f", recipe.totalTime) + " m"
