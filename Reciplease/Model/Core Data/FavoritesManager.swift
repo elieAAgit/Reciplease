@@ -1,47 +1,40 @@
 //
-//  FavoritesRecipes.swift
+//  FavouritesManager.swift
 //  Reciplease
 //
-//  Created by Elie Arquier on 05/03/2020.
-//  Copyright © 2020 Elie Arquier. All rights reserved.
+//  Created by Elie Arquier on 15/02/2021.
+//  Copyright © 2021 Elie Arquier. All rights reserved.
 //
 
 import Foundation
 import CoreData
 
-class FavoritesRecipes: NSManagedObject {
-    static let context = AppDelegate.viewContext
+final class FavoritesManager {
+
+    // Property
+    private let context: NSManagedObjectContext
+
+    init(context: NSManagedObjectContext) {
+        self.context = context
+    }
 
     /// To load and updated data in tableView
-    static var fetchedResultsController: NSFetchedResultsController<FavoritesRecipes> = {
+    var fetchedResultsController: [SavesRecipes] {
         // Create Fetch Request
-        let fetchRequest: NSFetchRequest<FavoritesRecipes> = FavoritesRecipes.fetchRequest()
+        let fetchRequest: NSFetchRequest<SavesRecipes> = SavesRecipes.fetchRequest()
 
         // Configure Fetch Request
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "label", ascending: true)]
 
         // Create Fetched Results Controller
-        let fetchedResultsController = NSFetchedResultsController(
-            fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-
-        return fetchedResultsController
-    }()
-
-    /// Load fetch
-    static func loadPersistant() {
-        do {
-            try FavoritesRecipes.fetchedResultsController.performFetch()
-        } catch {
-            let fetchError = error as NSError
-            print("Unable to Perform Fetch Request")
-            print("\(fetchError), \(fetchError.localizedDescription)")
-        }
+        guard let tasks = try? context.fetch(fetchRequest) else { return [] }
+                return tasks
     }
-
+    
     /// Add recipe in Database as favorite
-    static func addRecipe(image: String, label: String, yield: String,
+    func addRecipe(image: String, label: String, yield: String,
                           totalTime: Double, ingredientLines: String, url: String) {
-        let favoritesRecipes = FavoritesRecipes(context: context)
+        let favoritesRecipes = SavesRecipes(context: context)
 
         // Add data
         favoritesRecipes.label = label
@@ -55,8 +48,8 @@ class FavoritesRecipes: NSManagedObject {
     }
 
     /// Suppress recipe in Database as favorite
-    static func suppressRecipe(title: String) {
-        let request: NSFetchRequest<FavoritesRecipes> = FavoritesRecipes.fetchRequest()
+    func suppressRecipe(title: String) {
+        let request: NSFetchRequest<SavesRecipes> = SavesRecipes.fetchRequest()
         request.predicate = NSPredicate(format: "label == %@", title)
 
         // If the recipe is in the favorites, she is deleted
@@ -70,10 +63,10 @@ class FavoritesRecipes: NSManagedObject {
     }
 
     /// Check if the recipe is in the favorites
-    static func recipeIsFavoriteOrNot(title: String, completion: (Bool) -> Void ) {
+    func recipeIsFavoriteOrNot(title: String, completion: (Bool) -> Void ) {
         var favorite = true
 
-        let request: NSFetchRequest<FavoritesRecipes> = FavoritesRecipes.fetchRequest()
+        let request: NSFetchRequest<SavesRecipes> = SavesRecipes.fetchRequest()
         request.predicate = NSPredicate(format: "label == %@", title)
 
         // Array with the recipe, or not
@@ -87,3 +80,5 @@ class FavoritesRecipes: NSManagedObject {
         completion(favorite)
     }
 }
+
+

@@ -22,6 +22,7 @@ class RecipeViewController: UIViewController {
     @IBOutlet weak var ingredientsLabel: UILabel!
     @IBOutlet weak var getDirectionsButton: UIButtonRounded!
 
+    var favoritesRecipes: FavoritesManager?
     /// Get data from SearchTableViewController
     var recipeDetails: RecipeDetails?
     /// Recipe is in user favorites or not
@@ -30,6 +31,11 @@ class RecipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        guard let appdelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                let coredataStack = appdelegate.coreDataStack
+        favoritesRecipes = FavoritesManager(context: coredataStack.viewContext)
+        
         detailView.layer.cornerRadius = 10
     }
 
@@ -88,7 +94,7 @@ extension RecipeViewController {
         guard let recipeTitle = recipeLabel.text else { return }
 
         // Method to check if the recipe is in the database
-        FavoritesRecipes.recipeIsFavoriteOrNot(title: recipeTitle) { (favorite) in
+        favoritesRecipes?.recipeIsFavoriteOrNot(title: recipeTitle) { (favorite) in
             self.favorite = favorite
 
             // If she is in the database
@@ -113,7 +119,7 @@ extension RecipeViewController {
             guard let recipeTitle = recipeLabel.text else { return }
 
             // Suppress in the database
-            FavoritesRecipes.suppressRecipe(title: recipeTitle)
+            favoritesRecipes?.suppressRecipe(title: recipeTitle)
 
             // Remove recipe from favorites
             favorite = false
@@ -127,7 +133,7 @@ extension RecipeViewController {
             guard let recipe = recipeDetails else { return }
 
             // Add recipe in the database
-            FavoritesRecipes.addRecipe(image: recipe.imageUrl, label: recipe.label, yield: recipe.yield,
+            favoritesRecipes?.addRecipe(image: recipe.imageUrl, label: recipe.label, yield: recipe.yield,
                                        totalTime: recipe.totalTime, ingredientLines: recipe.ingredientsLabel, url: recipe.url)
 
             // Add recipe from favorites

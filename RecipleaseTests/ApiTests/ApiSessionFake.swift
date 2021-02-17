@@ -6,9 +6,9 @@
 //  Copyright © 2021 Elie Arquier. All rights reserved.
 //
 
-@testable import Reciplease
-import Foundation
+/*import Foundation
 import Alamofire
+@testable import Reciplease
 
 class ApiSessionFake: RecipeRequest {
     
@@ -25,3 +25,4 @@ class ApiSessionFake: RecipeRequest {
         completion(AFDataResponse<Any>(request: nil, response: httpResponse, data: data, metrics: nil, serializationDuration: 0, result: .success("OK")))
     }
 }
+*/

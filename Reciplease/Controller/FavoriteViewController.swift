@@ -14,6 +14,7 @@ class FavoriteViewController: UIViewController {
     @IBOutlet weak var missingFavoritesLabel: UILabel!
     @IBOutlet weak var favoriteTableView: UITableView!
 
+    var favoritesManager: FavoritesManager?
     /// To pass recipe between controller
     var recipeDetails: RecipeDetails?
 
@@ -27,28 +28,25 @@ class FavoriteViewController: UIViewController {
         let nib = UINib(nibName: "CustomTableViewCell", bundle: nil)
         favoriteTableView.register(nib, forCellReuseIdentifier: CustomTableViewCell.cellIdentifier)
 
-        loadPersistant()
+        guard let appdelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                let coredataStack = appdelegate.coreDataStack
+        favoritesManager = FavoritesManager(context: coredataStack.viewContext)
 
-        // Configure Fetched Results Controller
-        FavoritesRecipes.fetchedResultsController.delegate = self
-
+        updateView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         updateView()
     }
 }
 
 // MARK: - Loading and updating view
 extension FavoriteViewController {
-    private func loadPersistant() {
-        FavoritesRecipes.loadPersistant()
-
-        self.updateView()
-    }
-
     /// Show table view if obejects in database > 0, else show indicative message
     fileprivate func updateView() {
         var hasEntry = false
 
-        if let entities = FavoritesRecipes.fetchedResultsController.fetchedObjects {
+        if let entities = favoritesManager?.fetchedResultsController {
             hasEntry = entities.count > 0
         }
         favoriteTableView.isHidden = !hasEntry
@@ -65,7 +63,7 @@ extension FavoriteViewController: UITableViewDataSource {
 
     /// Number of row for the table view: number of favorites in the database
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let entities = FavoritesRecipes.fetchedResultsController.fetchedObjects else { return 0 }
+        guard let entities = favoritesManager?.fetchedResultsController else { return 0 }
 
         return entities.count
     }
@@ -78,13 +76,13 @@ extension FavoriteViewController: UITableViewDataSource {
         }
 
         // Fetch recipes
-        let recipe = FavoritesRecipes.fetchedResultsController.object(at: indexPath)
+        let recipe = favoritesManager?.fetchedResultsController[indexPath.row]
 
-        guard let recipeImage = recipe.image else {return UITableViewCell() }
-        guard let recipeLabel = recipe.label else {return UITableViewCell() }
-        guard let ingredientsLabel = recipe.ingredientLines else {return UITableViewCell() }
-        guard let recipeLike = recipe.yield else {return UITableViewCell() }
-        let recipePreparation = recipe.totalTime
+        guard let recipeImage = recipe?.image else {return UITableViewCell() }
+        guard let recipeLabel = recipe?.label else {return UITableViewCell() }
+        guard let ingredientsLabel = recipe?.ingredientLines else {return UITableViewCell() }
+        guard let recipeLike = recipe?.yield else {return UITableViewCell() }
+        guard let recipePreparation = recipe?.totalTime else { return UITableViewCell() }
 
         // Pass data to the custom cell
         cell.displayrecipe(recipeImage: recipeImage, recipeLabel: recipeLabel, ingredientsLabel: ingredientsLabel, recipeLikeLabel: recipeLike, recipePreparationLabel: recipePreparation)
@@ -126,18 +124,19 @@ extension FavoriteViewController: NSFetchedResultsControllerDelegate {
 extension FavoriteViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Fetch recipes
-        let recipe = FavoritesRecipes.fetchedResultsController.object(at: indexPath)
+        let recipe = favoritesManager?.fetchedResultsController[indexPath.row]
 
         // Access the recipe details
-        guard let image = recipe.image else { return }
-        guard let label = recipe.label else { return }
-        guard let ingredients = recipe.ingredientLines else { return }
-        guard let yield = recipe.yield else { return }
-        guard let url = recipe.url else { return }
+        guard let image = recipe?.image else { return }
+        guard let label = recipe?.label else { return }
+        guard let ingredients = recipe?.ingredientLines else { return }
+        guard let yield = recipe?.yield else { return }
+        guard let url = recipe?.url else { return }
+        guard let time = recipe?.totalTime else { return }
 
         // Recipe for RecipeViewController
         recipeDetails = RecipeDetails(imageUrl: image, label: label, ingredients: ingredients,
-                                      yield: yield, totalTime: recipe.totalTime, url: url)
+                                      yield: yield, totalTime: time, url: url)
 
         performSegue(withIdentifier: SegueIdentifiers.favoriteTableToRecipe.rawValue, sender: self)
     }

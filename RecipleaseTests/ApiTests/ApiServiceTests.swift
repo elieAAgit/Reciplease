@@ -6,7 +6,7 @@
 //  Copyright © 2021 Elie Arquier. All rights reserved.
 //
 
-@testable import Reciplease
+/*@testable import Reciplease
 import XCTest
 
 class ApiServiceTests: XCTestCase {
@@ -106,4 +106,4 @@ class ApiServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 0.01)
     }
 }
-
+*/

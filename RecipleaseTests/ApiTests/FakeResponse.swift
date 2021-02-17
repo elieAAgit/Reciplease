@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Alamofire
 
 struct FakeResponse {
     var response: HTTPURLResponse?

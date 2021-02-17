@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D0D7F0225DDB26E00637039 /* FavoritesManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0D7F0125DDB26E00637039 /* FavoritesManagerTests.swift */; };
 		0D35E79C24104B66002926DD /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D35E79B24104B66002926DD /* RecipeViewController.swift */; };
 		0D5EB5B424123AFC00C47417 /* ActivityIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EB5B324123AFC00C47417 /* ActivityIndicatorViewController.swift */; };
 		0D5EB5B624123B1E00C47417 /* ActivityIndicator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D5EB5B524123B1E00C47417 /* ActivityIndicator.storyboard */; };
@@ -19,7 +20,6 @@
 		0D5EB5CC2412CB0900C47417 /* Notification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EB5CB2412CB0900C47417 /* Notification.Name.swift */; };
 		0D5EB5CE2412CB9700C47417 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EB5CD2412CB9700C47417 /* Notification.swift */; };
 		0D5EB5D12412D46900C47417 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EB5D02412D46900C47417 /* ViewController.swift */; };
-		0D5F1D91241178CD005CB12D /* FavoritesRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5F1D90241178CD005CB12D /* FavoritesRecipes.swift */; };
 		0D61C72A2413EB830020013F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D61C7292413EB830020013F /* SettingsViewController.swift */; };
 		0D61C72E2413EEA90020013F /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D61C72D2413EEA90020013F /* UserPreferences.swift */; };
 		0D61C7302413F07C0020013F /* LanguageTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D61C72F2413F07C0020013F /* LanguageTranslation.swift */; };
@@ -50,6 +50,9 @@
 		0DDA862725D98CBE00C34E43 /* RecipeRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA862625D98CBE00C34E43 /* RecipeRequestProtocol.swift */; };
 		0DDA862F25D9B80700C34E43 /* ApiServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA862E25D9B80700C34E43 /* ApiServiceTests.swift */; };
 		0DDA863525D9C10000C34E43 /* Recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA863425D9C0FF00C34E43 /* Recipes.json */; };
+		0DDA864D25D9CD6700C34E43 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA864C25D9CD6600C34E43 /* CoreDataStack.swift */; };
+		0DDA865225D9CED100C34E43 /* MockCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA865125D9CED100C34E43 /* MockCoreDataStack.swift */; };
+		0DDA868325DA4AA500C34E43 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA868225DA4AA400C34E43 /* FavoritesManager.swift */; };
 		673517B4BC6DAFF1F590EB6F /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0F9942682DA6DED158C9A40 /* Pods_Reciplease.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D0D7F0125DDB26E00637039 /* FavoritesManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManagerTests.swift; sourceTree = "<group>"; };
 		0D35E79B24104B66002926DD /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		0D5EB5B324123AFC00C47417 /* ActivityIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorViewController.swift; sourceTree = "<group>"; };
 		0D5EB5B524123B1E00C47417 /* ActivityIndicator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivityIndicator.storyboard; sourceTree = "<group>"; };
@@ -76,7 +80,6 @@
 		0D5EB5CB2412CB0900C47417 /* Notification.Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.Name.swift; sourceTree = "<group>"; };
 		0D5EB5CD2412CB9700C47417 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		0D5EB5D02412D46900C47417 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0D5F1D90241178CD005CB12D /* FavoritesRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRecipes.swift; sourceTree = "<group>"; };
 		0D61C7292413EB830020013F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0D61C72D2413EEA90020013F /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		0D61C72F2413F07C0020013F /* LanguageTranslation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTranslation.swift; sourceTree = "<group>"; };
@@ -111,6 +114,9 @@
 		0DDA862625D98CBE00C34E43 /* RecipeRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRequestProtocol.swift; sourceTree = "<group>"; };
 		0DDA862E25D9B80700C34E43 /* ApiServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceTests.swift; sourceTree = "<group>"; };
 		0DDA863425D9C0FF00C34E43 /* Recipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Recipes.json; sourceTree = "<group>"; };
+		0DDA864C25D9CD6600C34E43 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		0DDA865125D9CED100C34E43 /* MockCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataStack.swift; sourceTree = "<group>"; };
+		0DDA868225DA4AA400C34E43 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
 		840508822642CBEBC5207592 /* Pods-Reciplease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.release.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.release.xcconfig"; sourceTree = "<group>"; };
 		A13FF07C3318DD8F7DFDC5F3 /* Pods-Reciplease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.debug.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.debug.xcconfig"; sourceTree = "<group>"; };
 		F0F9942682DA6DED158C9A40 /* Pods_Reciplease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reciplease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,7 +196,8 @@
 			isa = PBXGroup;
 			children = (
 				0D643356240C300F008F0CB4 /* Reciplease.xcdatamodeld */,
-				0D5F1D90241178CD005CB12D /* FavoritesRecipes.swift */,
+				0DDA868225DA4AA400C34E43 /* FavoritesManager.swift */,
+				0DDA864C25D9CD6600C34E43 /* CoreDataStack.swift */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -249,6 +256,7 @@
 		0D643366240C3019008F0CB4 /* RecipleaseTests */ = {
 			isa = PBXGroup;
 			children = (
+				0DDA865025D9CEA100C34E43 /* CoreDataTest */,
 				0DDA860625D8726D00C34E43 /* ApiTests */,
 				0D643369240C3019008F0CB4 /* Info.plist */,
 				0DDA863425D9C0FF00C34E43 /* Recipes.json */,
@@ -340,6 +348,15 @@
 				0DDA862E25D9B80700C34E43 /* ApiServiceTests.swift */,
 			);
 			path = ApiTests;
+			sourceTree = "<group>";
+		};
+		0DDA865025D9CEA100C34E43 /* CoreDataTest */ = {
+			isa = PBXGroup;
+			children = (
+				0DDA865125D9CED100C34E43 /* MockCoreDataStack.swift */,
+				0D0D7F0125DDB26E00637039 /* FavoritesManagerTests.swift */,
+			);
+			path = CoreDataTest;
 			sourceTree = "<group>";
 		};
 		50E3D77D4A9AF355B046646B /* Frameworks */ = {
@@ -516,10 +533,12 @@
 				0D35E79C24104B66002926DD /* RecipeViewController.swift in Sources */,
 				0D5EB5CE2412CB9700C47417 /* Notification.swift in Sources */,
 				0D64334E240C300F008F0CB4 /* AppDelegate.swift in Sources */,
+				0DDA864D25D9CD6700C34E43 /* CoreDataStack.swift in Sources */,
 				0D5EB5C52412BF8E00C47417 /* AlertViewController.swift in Sources */,
 				0D5EB5D12412D46900C47417 /* ViewController.swift in Sources */,
 				0D657EFE241A36A000518953 /* RecipeDetails.swift in Sources */,
 				0D652CFE241B883300AF2E51 /* UIButtonRounded.swift in Sources */,
+				0DDA868325DA4AA500C34E43 /* FavoritesManager.swift in Sources */,
 				0D643377240C3B3A008F0CB4 /* SearchViewController.swift in Sources */,
 				0D61C72A2413EB830020013F /* SettingsViewController.swift in Sources */,
 				0DDA862725D98CBE00C34E43 /* RecipeRequestProtocol.swift in Sources */,
@@ -539,7 +558,6 @@
 				0D643350240C300F008F0CB4 /* SceneDelegate.swift in Sources */,
 				0D63E338240FC5D000848299 /* UIImageView.swift in Sources */,
 				0D6433D9240DAA87008F0CB4 /* FavoriteViewController.swift in Sources */,
-				0D5F1D91241178CD005CB12D /* FavoritesRecipes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,9 +566,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DDA861225D87D5E00C34E43 /* ApiSessionFake.swift in Sources */,
+				0D0D7F0225DDB26E00637039 /* FavoritesManagerTests.swift in Sources */,
 				0DDA860825D872B500C34E43 /* FakeResponse.swift in Sources */,
 				0DDA860E25D8731F00C34E43 /* FakeResponseData.swift in Sources */,
 				0DDA862F25D9B80700C34E43 /* ApiServiceTests.swift in Sources */,
+				0DDA865225D9CED100C34E43 /* MockCoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
