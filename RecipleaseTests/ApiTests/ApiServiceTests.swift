@@ -6,7 +6,7 @@
 //  Copyright © 2021 Elie Arquier. All rights reserved.
 //
 
-/*@testable import Reciplease
+@testable import Reciplease
 import XCTest
 
 class ApiServiceTests: XCTestCase {
@@ -22,8 +22,8 @@ class ApiServiceTests: XCTestCase {
         edamanParameters = ["kiwi"]
     }
 
-    func testGetData_WhenNoDataIsPassed_ThenShouldReturnFailedCallback() {
-        let session = ApiSessionFake(fakeResponse: FakeResponse(response: nil, data: nil))
+    func testGetRecipe_WhenNoDataIsPassed_ThenShouldReturnFailedCallback() {
+        let session = ApiSessionFake(fakeResponse: FakeResponse(response: FakeResponseData.responseOK, data: nil))
         
         let apiService = ApiService(recipeRequest: session as RecipeRequest)
         
@@ -42,8 +42,8 @@ class ApiServiceTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 0.01)
     }
-    
-    func testGetData_WhenIncorrectResponseIsPassed_ThenShouldReturnFailedCallback() {
+
+    func testGetRecipe_WhenIncorrectResponseIsPassed_ThenShouldReturnFailedCallback() {
         let session = ApiSessionFake(fakeResponse: FakeResponse(response: FakeResponseData.responseKO, data: FakeResponseData.correctData))
         
         let apiService = ApiService(recipeRequest: session as RecipeRequest)
@@ -64,7 +64,7 @@ class ApiServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 0.01)
     }
     
-    func testGetData_WhenUndecodableDataIsPassed_ThenShouldReturnFailedCallback() {
+    func testGetRecipe_WhenIncorrectDataIsPassed_ThenShouldReturnFailedCallback() {
         let session = ApiSessionFake(fakeResponse: FakeResponse(response: FakeResponseData.responseOK, data: FakeResponseData.incorrectData))
 
         let apiService = ApiService(recipeRequest: session as RecipeRequest)
@@ -85,7 +85,7 @@ class ApiServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 0.01)
     }
     
-    func testGetData_WhenCorrectDataIsPassed_ThenShouldReturnSuccededCallback() {
+    func testGetRecipe_WhenCorrectDataIsPassed_ThenShouldReturnSuccededCallback() {
         let session = ApiSessionFake(fakeResponse: FakeResponse(response: FakeResponseData.responseOK, data: FakeResponseData.correctData))
         
         let apiService = ApiService(recipeRequest: session as RecipeRequest)
@@ -96,14 +96,11 @@ class ApiServiceTests: XCTestCase {
             if success {
                 guard response != nil else { return }
 
-                XCTFail("Test with no data failed.")
-
             }
-            
-            XCTAssertTrue(response!.hits[0].recipe.label  == "Frozen Grapes and Kiwi")
+
+            XCTAssertEqual(response!.hits[0].recipe.label, "Frozen Grapes and Kiwi")
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
     }
 }
-*/
