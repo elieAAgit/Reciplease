@@ -31,10 +31,9 @@ class RecipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         guard let appdelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-                let coredataStack = appdelegate.coreDataStack
-        favoritesRecipes = FavoritesManager(context: coredataStack.viewContext)
+        let coreDataStack = appdelegate.coreDataStack
+        favoritesRecipes = FavoritesManager(context: coreDataStack.viewContext)
         
         detailView.layer.cornerRadius = 10
     }

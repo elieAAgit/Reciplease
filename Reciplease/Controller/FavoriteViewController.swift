@@ -29,13 +29,15 @@ class FavoriteViewController: UIViewController {
         favoriteTableView.register(nib, forCellReuseIdentifier: CustomTableViewCell.cellIdentifier)
 
         guard let appdelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-                let coredataStack = appdelegate.coreDataStack
-        favoritesManager = FavoritesManager(context: coredataStack.viewContext)
+        let coreDataStack = appdelegate.coreDataStack
+        favoritesManager = FavoritesManager(context: coreDataStack.viewContext)
 
         updateView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        favoriteTableView.reloadData()
+
         updateView()
     }
 }
