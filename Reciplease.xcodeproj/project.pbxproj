@@ -43,6 +43,7 @@
 		0D658712240ED27C00D111A1 /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D658711240ED27C00D111A1 /* Recipes.swift */; };
 		0D658715240EFF3A00D111A1 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D658713240EFF3A00D111A1 /* CustomTableViewCell.swift */; };
 		0D658716240EFF3A00D111A1 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D658714240EFF3A00D111A1 /* CustomTableViewCell.xib */; };
+		0DA4053325DFB43E008F9D86 /* SearchServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA4053225DFB43E008F9D86 /* SearchServiceTests.swift */; };
 		0DDA860825D872B500C34E43 /* FakeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA860725D872B500C34E43 /* FakeResponse.swift */; };
 		0DDA860E25D8731F00C34E43 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA860D25D8731F00C34E43 /* FakeResponseData.swift */; };
 		0DDA861225D87D5E00C34E43 /* ApiSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA861125D87D5E00C34E43 /* ApiSessionFake.swift */; };
@@ -108,6 +109,7 @@
 		0D658711240ED27C00D111A1 /* Recipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
 		0D658713240EFF3A00D111A1 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		0D658714240EFF3A00D111A1 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		0DA4053225DFB43E008F9D86 /* SearchServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceTests.swift; sourceTree = "<group>"; };
 		0DDA860725D872B500C34E43 /* FakeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponse.swift; sourceTree = "<group>"; };
 		0DDA860D25D8731F00C34E43 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
 		0DDA861125D87D5E00C34E43 /* ApiSessionFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiSessionFake.swift; sourceTree = "<group>"; };
@@ -261,10 +263,10 @@
 		0D643366240C3019008F0CB4 /* RecipleaseTests */ = {
 			isa = PBXGroup;
 			children = (
+				0DA4053225DFB43E008F9D86 /* SearchServiceTests.swift */,
 				0DDA865025D9CEA100C34E43 /* CoreDataTest */,
 				0DDA860625D8726D00C34E43 /* ApiTests */,
 				0D643369240C3019008F0CB4 /* Info.plist */,
-				0DDA863425D9C0FF00C34E43 /* Recipes.json */,
 			);
 			path = RecipleaseTests;
 			sourceTree = "<group>";
@@ -351,6 +353,7 @@
 				0DDA860D25D8731F00C34E43 /* FakeResponseData.swift */,
 				0DDA861125D87D5E00C34E43 /* ApiSessionFake.swift */,
 				0DDA862E25D9B80700C34E43 /* ApiServiceTests.swift */,
+				0DDA863425D9C0FF00C34E43 /* Recipes.json */,
 			);
 			path = ApiTests;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DDA861225D87D5E00C34E43 /* ApiSessionFake.swift in Sources */,
+				0DA4053325DFB43E008F9D86 /* SearchServiceTests.swift in Sources */,
 				0D0D7F0225DDB26E00637039 /* FavoritesManagerTests.swift in Sources */,
 				0DDA860825D872B500C34E43 /* FakeResponse.swift in Sources */,
 				0DDA860E25D8731F00C34E43 /* FakeResponseData.swift in Sources */,
