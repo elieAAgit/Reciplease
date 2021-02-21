@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlertService {
+final class AlertService {
     /// Function alert: add your title, message, action button title and if you need cancel button or not
     static func alert(title: String, message: String, action: String,
                       callback: @escaping () -> Void) -> AlertViewController {

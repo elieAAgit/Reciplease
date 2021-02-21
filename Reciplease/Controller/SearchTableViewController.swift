@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchTableViewController: UIViewController {
+final class SearchTableViewController: UIViewController {
 // MARK: - Outlet and property
     @IBOutlet weak var tableView: UITableView!
     

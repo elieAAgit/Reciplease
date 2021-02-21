@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ActivityIndicatorService {
+final class ActivityIndicatorService {
     var activityIndicator: ActivityIndicatorViewController?
 
     /// Show Activity indicator view

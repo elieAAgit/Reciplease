@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UserPreferences {
+final class UserPreferences {
     /// Key for use Userdefaults methods
     private struct Keys {
         static let language = "language"

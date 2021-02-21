@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class FavoriteViewController: UIViewController {
+final class FavoriteViewController: UIViewController {
 // MARK: - Outlets and property
     @IBOutlet weak var missingFavoritesLabel: UILabel!
     @IBOutlet weak var favoriteTableView: UITableView!

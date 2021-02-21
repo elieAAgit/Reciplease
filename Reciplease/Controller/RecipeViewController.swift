@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecipeViewController: UIViewController {
+final class RecipeViewController: UIViewController {
 // MARK: - Outlets and properties
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var recipeLabel: UILabel!
@@ -31,11 +31,18 @@ class RecipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Observe to display alert
+        NotificationCenter.default.addObserver(self, selector: #selector(alert(notification:)), name: .alert, object: nil)
+
         guard let appdelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let coreDataStack = appdelegate.coreDataStack
         favoritesRecipes = FavoritesManager(context: coreDataStack.viewContext)
         
         detailView.layer.cornerRadius = 10
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .alert, object: nil)
     }
 
     override func viewDidAppear(_ animated: Bool) {

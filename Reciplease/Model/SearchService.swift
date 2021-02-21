@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SearchService {
+final class SearchService {
     /// List of aliments for network call
     var aliments: [String] = []
 

@@ -20,27 +20,27 @@ class SearchServiceTests: XCTestCase {
         searchService.aliments = ["Kiwi", "Bananas"]
     }
 
-    func testGetWhenThen() {
+    func testAddAliment_WhenWantAddAliment_ThenAlimentIsAdded() {
         searchService.addAliment(aliment: "Apple")
         
         XCTAssertEqual(searchService.aliments.count, 3)
         XCTAssertEqual(searchService.aliments[2], "Apple")
     }
 
-    func test() {
+    func testParameters_WhenAddInParameters_ThenAlimentsAreAddInParameters() {
         searchService.addAlimentsToParameters()
         
         XCTAssertEqual(ApiUrl.edamanParameters, "Kiwi,Bananas")
     }
 
-    func test1() {
+    func testRemoveAliment_WhenWantremoveAllAliment_ThenAllAlimentsAreRemove() {
         searchService.removeAliment(at: 0)
         
         XCTAssertEqual(searchService.aliments.count, 1)
         XCTAssertEqual(searchService.aliments[0], "Bananas")
     }
 
-    func test2() {
+    func testRemoveAliment_WhenWantRemoveOneAliment_ThenAlimentIsRemove() {
         searchService.deleteAliments()
         
         XCTAssertEqual(searchService.aliments.count, 0)

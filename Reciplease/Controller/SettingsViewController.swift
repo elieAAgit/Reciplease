@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+final class SettingsViewController: UIViewController {
 // MARK: - Outlet
     @IBOutlet weak var languageChoice: UISegmentedControl!
 

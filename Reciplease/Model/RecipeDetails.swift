@@ -9,7 +9,7 @@
 import Foundation
 
 /// To create recipe object
-class RecipeDetails {
+final class RecipeDetails {
     // Properties used to display the details of a recipe
     var imageUrl: String
     var label: String

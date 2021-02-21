@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class AlamofireSession: RecipeRequest {
+final class AlamofireSession: RecipeRequest {
     func getRecipe(url: String, completion: @escaping (AFDataResponse<Any>) -> Void) {
         AF.request(url).responseJSON { responseData in
             completion(responseData)

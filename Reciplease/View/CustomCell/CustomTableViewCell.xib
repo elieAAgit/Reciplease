@@ -32,22 +32,22 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9w5-ob-dP9" userLabel="Detail View">
                                 <rect key="frame" x="244" y="24" width="90" height="69"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxh-JI-fXQ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxh-JI-fXQ">
                                         <rect key="frame" x="5" y="8" width="10.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="chart.pie" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="m0N-hQ-kRe">
-                                        <rect key="frame" x="62" y="8.5" width="20" height="19"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" image="chart.pie" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="m0N-hQ-kRe">
+                                        <rect key="frame" x="15.5" y="8.5" width="66.5" height="19"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3ac-35-TIh">
-                                        <rect key="frame" x="62" y="41.5" width="20" height="19"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3ac-35-TIh">
+                                        <rect key="frame" x="34" y="41.5" width="48" height="19"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jj-el-X37">
-                                        <rect key="frame" x="5" y="40.5" width="25" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 m" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jj-el-X37">
+                                        <rect key="frame" x="5" y="40.5" width="29" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -63,8 +63,10 @@
                                     <constraint firstItem="m0N-hQ-kRe" firstAttribute="top" secondItem="9w5-ob-dP9" secondAttribute="top" constant="8" id="Lc2-PS-vad"/>
                                     <constraint firstItem="4Jj-el-X37" firstAttribute="leading" secondItem="9w5-ob-dP9" secondAttribute="leading" constant="5" id="NKk-aJ-c98"/>
                                     <constraint firstAttribute="width" secondItem="9w5-ob-dP9" secondAttribute="height" multiplier="90:69" id="OV0-01-6XE"/>
+                                    <constraint firstItem="m0N-hQ-kRe" firstAttribute="leading" secondItem="Rxh-JI-fXQ" secondAttribute="trailing" id="ag1-qd-XaR"/>
                                     <constraint firstItem="Rxh-JI-fXQ" firstAttribute="leading" secondItem="9w5-ob-dP9" secondAttribute="leading" constant="5" id="cpy-MS-XSF"/>
                                     <constraint firstItem="4Jj-el-X37" firstAttribute="top" secondItem="Rxh-JI-fXQ" secondAttribute="bottom" constant="12" id="hzu-i6-ZIX"/>
+                                    <constraint firstItem="3ac-35-TIh" firstAttribute="leading" secondItem="4Jj-el-X37" secondAttribute="trailing" id="kPO-yM-Fnz"/>
                                     <constraint firstAttribute="trailing" secondItem="m0N-hQ-kRe" secondAttribute="trailing" constant="8" id="oTu-Fh-Gps"/>
                                 </constraints>
                             </view>
