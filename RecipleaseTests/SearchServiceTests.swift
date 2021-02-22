@@ -10,15 +10,21 @@ import XCTest
 @testable import Reciplease
 
 class SearchServiceTests: XCTestCase {
-    
+ 
+    // MARK: - Properties
+
     var searchService: SearchService!
 
+    // MARK: - Tests Life Cycle
+    
     override func setUp() {
         super.setUp()
 
         searchService = SearchService()
         searchService.aliments = ["Kiwi", "Bananas"]
     }
+
+    // MARK: - Tests
 
     func testAddAliment_WhenWantAddAliment_ThenAlimentIsAdded() {
         searchService.addAliment(aliment: "Apple")

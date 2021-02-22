@@ -8,7 +8,12 @@
 
 import Foundation
 import Alamofire
+import AlamofireImage
 
 protocol RecipeRequest {
     func getRecipe(url: String, completion: @escaping (AFDataResponse<Any>) -> Void)
+}
+
+protocol ImageRequest {
+    func getImage(imageUrl: String, completion: @escaping(AFDataResponse<Data?>) -> Void)
 }

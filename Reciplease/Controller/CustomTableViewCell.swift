@@ -17,6 +17,9 @@ final class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var recipeLikeLabel: UILabel!
     @IBOutlet weak var recipePreparationLabel: UILabel!
 
+    /// Instance of ApiImageService
+    var apiService = ApiImageService()
+
     /// Name of the custom cell
     static let cellIdentifier = "customCell"
 
@@ -33,8 +36,19 @@ extension CustomTableViewCell {
     func displayrecipe(recipeImage: String, recipeLabel: String, ingredientsLabel: String,
                        recipeLikeLabel: String, recipePreparationLabel: Double) {
 
+        apiService.getImage(imageUrl: recipeImage) { (success, data) in
+            if success {
+                guard let data = data else { return }
+
+                self.recipeImage.image = UIImage(data:data) ?? UIImage(named: "default")!
+                
+            } else {
+                self.recipeImage.image = UIImage(named: "default")!
+            }
+        }
+
         // Display data in custom cell labels and image
-        self.recipeImage.load(imageUrl: recipeImage)
+        //self.recipeImage.image = test(recipeImage: recipeImage)
         self.recipeLabel.text = recipeLabel
         self.ingredientsLabel.text = ingredientsLabel
         self.recipeLikeLabel.text = recipeLikeLabel

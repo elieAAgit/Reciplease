@@ -22,6 +22,8 @@ class ApiServiceTests: XCTestCase {
         edamanParameters = ["kiwi"]
     }
 
+    // MARK: - Tests
+
     func testGetRecipe_WhenNoDataIsPassed_ThenShouldReturnFailedCallback() {
         let session = ApiSessionFake(fakeResponse: FakeResponse(response: FakeResponseData.responseOK, data: nil))
         
@@ -30,14 +32,9 @@ class ApiServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         
         apiService.getRecipe(url: ApiUrl.edamanUrl) { (success, response) in
-            if success {
-                guard response != nil else { return }
 
-                XCTFail("Test with no data failed.")
-
-            }
-
-            XCTAssertNotNil(!success)
+            XCTAssertFalse(success)
+            XCTAssertNil(response)
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -51,14 +48,9 @@ class ApiServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Wait for queue change.")
 
         apiService.getRecipe(url: ApiUrl.edamanUrl) { (success, response) in
-            if success {
-                guard response != nil else { return }
 
-                XCTFail("Test with no data failed.")
-
-            }
-
-            XCTAssertNotNil(!success)
+            XCTAssertFalse(success)
+            XCTAssertNil(response)
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -72,14 +64,9 @@ class ApiServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Wait for queue change.")
 
         apiService.getRecipe(url: ApiUrl.edamanUrl) { (success, response) in
-            if success {
-                guard response != nil else { return }
 
-                XCTFail("Test with no data failed.")
-
-            }
-
-            XCTAssertNotNil(!success)
+            XCTAssertFalse(success)
+            XCTAssertNil(response)
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -93,11 +80,8 @@ class ApiServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         
         apiService.getRecipe(url: ApiUrl.edamanUrl) { (success, response) in
-            if success {
-                guard response != nil else { return }
 
-            }
-
+            XCTAssertTrue(success)
             XCTAssertEqual(response!.hits[0].recipe.label, "Frozen Grapes and Kiwi")
             expectation.fulfill()
         }

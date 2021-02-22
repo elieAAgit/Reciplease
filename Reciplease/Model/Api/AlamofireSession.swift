@@ -8,11 +8,22 @@
 
 import Foundation
 import Alamofire
+import AlamofireImage
 
 final class AlamofireSession: RecipeRequest {
     func getRecipe(url: String, completion: @escaping (AFDataResponse<Any>) -> Void) {
         AF.request(url).responseJSON { responseData in
+            
             completion(responseData)
+        }
+    }
+}
+
+extension AlamofireSession: ImageRequest {
+    func getImage(imageUrl: String, completion: @escaping(AFDataResponse<Data?>) -> Void) {
+        AF.request(imageUrl, method: .get).response { responseImage in
+
+            completion(responseImage)
         }
     }
 }

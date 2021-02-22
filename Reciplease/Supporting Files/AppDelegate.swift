@@ -12,8 +12,12 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    lazy var coreDataStack = CoreDataStack(name: "Reciplease")
+    lazy var coreData = CoreDataStack(name: "Reciplease")
     
+    static var coreDataStack: CoreDataStack {
+        return (UIApplication.shared.delegate as! AppDelegate).coreData
+    }
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
@@ -36,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Core Data Saving support
 
     func saveContext () {
-        let context = coreDataStack.persistentContainer.viewContext
+        let context = coreData.persistentContainer.viewContext
         if context.hasChanges {
             do {
                 try context.save()

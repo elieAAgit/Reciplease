@@ -28,8 +28,7 @@ final class FavoriteViewController: UIViewController {
         let nib = UINib(nibName: "CustomTableViewCell", bundle: nil)
         favoriteTableView.register(nib, forCellReuseIdentifier: CustomTableViewCell.cellIdentifier)
 
-        guard let appdelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let coreDataStack = appdelegate.coreDataStack
+        let coreDataStack = AppDelegate.coreDataStack
         favoritesManager = FavoritesManager(context: coreDataStack.viewContext)
 
         updateView()

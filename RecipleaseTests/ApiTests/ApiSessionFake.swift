@@ -11,7 +11,7 @@ import Alamofire
 @testable import Reciplease
 
 class ApiSessionFake: RecipeRequest {
-    
+
     private let fakeResponse: FakeResponse
     
     init(fakeResponse: FakeResponse) {

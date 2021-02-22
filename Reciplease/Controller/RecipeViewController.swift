@@ -18,6 +18,8 @@ final class RecipeViewController: UIViewController {
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var starNavigation: UIBarButtonItem!
 
+    /// Instance of ApiImageService
+    let apiService = ApiImageService()
     // Show the right language
     @IBOutlet weak var ingredientsLabel: UILabel!
     @IBOutlet weak var getDirectionsButton: UIButtonRounded!
@@ -34,8 +36,7 @@ final class RecipeViewController: UIViewController {
         // Observe to display alert
         NotificationCenter.default.addObserver(self, selector: #selector(alert(notification:)), name: .alert, object: nil)
 
-        guard let appdelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let coreDataStack = appdelegate.coreDataStack
+        let coreDataStack = AppDelegate.coreDataStack
         favoritesRecipes = FavoritesManager(context: coreDataStack.viewContext)
         
         detailView.layer.cornerRadius = 10
@@ -85,7 +86,17 @@ extension RecipeViewController {
         guard let recipe = recipeDetails else { return }
 
         // Display values
-        recipeImage.load(imageUrl: recipe.imageUrl)
+        apiService.getImage(imageUrl: recipe.imageUrl) { (success, data) in
+            if success {
+                guard let data = data else { return }
+
+                self.recipeImage.image = UIImage(data:data) ?? UIImage(named: "default")!
+                
+            } else {
+                self.recipeImage.image = UIImage(named: "default")!
+            }
+        }
+
         recipeLabel.text = recipe.label
         numberPartsLabel.text = String(recipe.yield)
         durationLabel.text = String(format:"%.0f", recipe.totalTime) + " m"

@@ -20,7 +20,7 @@ final class SearchViewController: UIViewController {
     @IBOutlet weak var clearButton: UIButtonRounded!
     @IBOutlet weak var searchButton: UIButtonRounded!
     
-
+    /// Instance of ApiService
     let apiService = ApiService()
     /// Instance of SearchService
     let search = SearchService()

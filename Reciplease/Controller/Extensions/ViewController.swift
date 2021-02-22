@@ -18,7 +18,7 @@ extension UIViewController {
 }
 
 extension UIViewController {
-    ///
+    /// Alert
     @objc func alert(notification: Notification) {
         var title: String
         var message: String
