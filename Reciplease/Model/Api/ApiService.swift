@@ -22,18 +22,20 @@ final class ApiService {
         recipeRequest.getRecipe(url: url) { responseData in
             guard responseData.response?.statusCode == 200 else {
                 completion(false, nil)
-                return
+                return Notification.alertNotification(alert: .noConnexion)
             }
+
             guard let data = responseData.data else {
                 completion(false, nil)
-                return
+                return Notification.alertNotification(alert: .searchUnavailable)
             }
+
             guard let recipeSearch = try? JSONDecoder().decode(Recipes.self, from: data) else {
                 completion(false, nil)
                 return
             }
+
             completion(true, recipeSearch)
-            
         }
     }
 }

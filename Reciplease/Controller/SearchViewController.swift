@@ -171,7 +171,6 @@ extension SearchViewController {
             Notification.alertNotification(alert: .noAliment)
 
         } else {
-            present(activityIndicator.showActivityIndicator(), animated: true, completion: nil)
 
             // Add parameters to Url
             search.addAlimentsToParameters()
@@ -179,8 +178,7 @@ extension SearchViewController {
             // Network call
             apiService.getRecipe(url: ApiUrl.edamanUrl) { (success, response) in
                 if success {
-                    // Dismiss activity indicator
-                    self.activityIndicator.dismissActivityController()
+                    self.present(self.activityIndicator.showActivityIndicator(), animated: true, completion: nil)
 
                     guard let response = response else { return }
 
@@ -190,12 +188,8 @@ extension SearchViewController {
                     // Perform segue
                     self.performSegue(withIdentifier: SegueIdentifiers.searchToSearchTableView.rawValue, sender: self)
 
-                } else {
                     // Dismiss activity indicator
                     self.activityIndicator.dismissActivityController()
-
-                    // Show alert
-                    Notification.alertNotification(alert: .searchUnavailable)
                 }
             }
         }

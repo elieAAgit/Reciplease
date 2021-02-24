@@ -42,7 +42,7 @@ extension UIViewController {
                     action = "Hecho"
                 case .searchUnavailable:
                     title = "Búsqueda no disponible"
-                    message = "La búsqueda no está disponible."
+                    message = "La búsqueda no devuelve ningún dato."
                     action = "Hecho"
                 case .addFavorite:
                     title = "Añadir favorito"
@@ -55,6 +55,10 @@ extension UIViewController {
                 case .language:
                     title = "Idioma desconocido"
                     message = "Este idioma lamentablemente no está disponible."
+                    action = "Hecho"
+                case .noConnexion:
+                    title = "Sin conexión"
+                    message = "Se requiere conexión para la investigación"
                     action = "Hecho"
             }
 
@@ -72,7 +76,7 @@ extension UIViewController {
                     action = "Done"
                 case .searchUnavailable:
                     title = "Search unavailable"
-                    message = "The search is unavailable."
+                    message = "The search does not return any data."
                     action = "Done"
                 case .addFavorite:
                     title = "Add favorite"
@@ -86,6 +90,10 @@ extension UIViewController {
                     title = "Language unknown"
                     message = "This language is unfortunately unavailable."
                     action = "Done"
+                case .noConnexion:
+                    title = "No connexion"
+                    message = "Connexion is required for research"
+                    action = "Ok"
             }
         }
 
